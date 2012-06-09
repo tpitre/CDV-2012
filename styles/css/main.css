@@ -76,7 +76,7 @@ html {
   height: 100%;
 }
 body {
-  font: normal 100%/1.4 Helvetica, Arial, sans-serif;
+  font: normal 100%/1.4 'proxima-nova', 'Arial Narrow', sans-serif;
   color: #3e4549;
   height: 100%;
   padding: 0;
@@ -110,23 +110,21 @@ h2,
 h3 {
   text-transform: uppercase;
   letter-spacing: -1px;
+  font-weight: normal;
 }
 h1 {
   font-size: 2.5em;
   /* 40 / 16 */
 
 }
-h2 {
-  font-size: 1.875em;
-  /* 30 / 16 */
-
+h2,
+h3 {
+  font-size: 2.1em;
+  font-family: 'Parisian', cursive;
 }
 h3 {
-  font-size: 1.375em;
-  /* 22 / 16 */
-
-  font-weight: 700;
-  letter-spacing: 0;
+  font-size: 1.8em;
+  margin: 16px 0 6px;
 }
 /* @end BASE */
 /* @group 3. MAIN
@@ -160,74 +158,75 @@ h3 {
   background-image: url(../../img/cdv-funny-s.jpg);
 }
 #main-container {
-  padding: 10px 2% 0;
-  font-size: 80%;
+  padding: 20px 2% 0;
+}
+#cdv {
+  background-color: black;
 }
 #cdv .cdv-save-the-date {
   position: relative;
-  margin: 0 auto;
+  margin: 30px auto;
   padding: 5px 0 0;
   display: block;
   color: #fff;
   text-align: center;
-  font-family: 'Oswald', 'franklin-gothic-urw-comp', 'Arial Narrow', sans-serif;
   font-style: normal;
-  line-height: normal;
   font-weight: 400;
-  text-transform: uppercase;
   width: 100%;
-  max-width: 540px;
+  max-width: 640px;
+  font-size: 1.4em;
+  line-height: 1.5;
 }
 #cdv .cdv-save-the-date h1 {
   margin: 0 0 14px;
 }
-#cdv .cdv-save-the-date small {
-  letter-spacing: 5px;
-  font-size: 1em;
-  display: block;
-  margin-bottom: 2px;
-}
-#cdv .cdv-save-the-date small.small-btm {
-  letter-spacing: 3px;
-  font-size: .95em;
-}
 #cdv .cdv-save-the-date h2 {
-  font-style: italic;
-  text-shadow: -1px -1px 0 #999999, 1px -1px 0 #999999, -1px 1px 0 #999999, 1px 1px 0 #333333, -5px 3px 0px rgba(0, 0, 0, 0.6);
-  margin: 0 0 8px;
-  font-size: 3em;
+  margin: -6px 0 -11px;
 }
-#cdv .cdv-save-the-date ul.krewe-list {
+#cdv .cdv-save-the-date ul {
   margin: 0;
   padding: 0;
   margin-bottom: 18px;
 }
-#cdv .cdv-save-the-date ul.krewe-list li {
+#cdv .cdv-save-the-date ul li {
   list-style: none;
 }
-#cdv .cdv-save-the-date ul.krewe-list li {
+#cdv .cdv-save-the-date ul.krewe-list {
+  max-width: 620px;
+}
+#cdv .cdv-save-the-date ul li {
   display: inline;
   margin-right: 4px;
   text-transform: none;
-  font-size: 1.2em;
-  letter-spacing: 0px;
-  line-height: 1.6;
 }
-#cdv .cdv-save-the-date ul.krewe-list li:after {
+#cdv .cdv-save-the-date ul li:after {
   content: '•';
   margin-left: 8px;
 }
-#cdv .cdv-save-the-date ul.krewe-list li.last:after,
-#cdv .cdv-save-the-date ul.krewe-list li.special:after {
+#cdv .cdv-save-the-date ul li.last:after,
+#cdv .cdv-save-the-date ul li.special:after {
   content: '';
   margin-left: 0;
 }
-#cdv .cdv-save-the-date ul.krewe-list li.special {
-  display: block;
-  margin-top: 10px;
+#cdv .cdv-save-the-date ul li.special.first-special {
+  margin-top: 16px;
 }
-#cdv .cdv-save-the-date ul.krewe-list li.special strong {
+#cdv .cdv-save-the-date ul li.special {
+  display: block;
+  margin-top: 3px;
+  text-align: left;
+}
+#cdv .cdv-save-the-date ul li.special strong {
+  text-transform: uppercase;
   margin-right: 6px;
+  font-family: 'Parisian', cursive;
+  letter-spacing: -1px;
+}
+#cdv .cdv-save-the-date ul li.special.first {
+  text-align: center;
+}
+#cdv .cdv-save-the-date ul li.special.first span {
+  text-transform: uppercase;
 }
 #cdv .cdv-save-the-date ul.cdv-dates {
   margin: 0;
@@ -245,20 +244,8 @@ h3 {
   margin: 0;
 }
 #cdv .cdv-save-the-date ul.cdv-dates li h3 .dtstart {
-  font: 1.4em 'Limelight', cursive;
+  font: 1.4em 'Parisian', cursive;
   margin-right: 6px;
-}
-#cdv .cdv-save-the-date ul.cdv-dates li h3 .summary {
-  font-style: italic;
-  text-shadow: -1px -1px 0 #999999, 1px -1px 0 #999999, -1px 1px 0 #999999, 1px 1px 0 #333333, -5px 3px 0px rgba(0, 0, 0, 0.6);
-}
-#cdv .cdv-save-the-date .small-btm {
-  display: block;
-  margin-bottom: 8px;
-}
-#cdv .cdv-save-the-date .cdv-btm {
-  clear: both;
-  margin-bottom: 14px;
 }
 #cdv .cdv-save-the-date ul.footer-social {
   margin: 0;
@@ -281,6 +268,27 @@ h3 {
 }
 #cdv .cdv-save-the-date ul.footer-social li.social-fb a {
   background-image: url(../../img/icon-facebook.png);
+}
+#cdv .cdv-save-the-date .bnb h3 {
+  font-family: "rosewood-std", Georgia, "Times New Roman", Times, serif;
+  letter-spacing: 0;
+  font-size: 2em;
+}
+#cdv .cdv-save-the-date .bnb h3 .dtstart {
+  font-family: "rosewood-std-fill", Georgia, "Times New Roman", Times, serif;
+}
+#cdv .cdv-save-the-date .footer-social li:after {
+  content: '';
+  margin-left: 0;
+}
+#cdv .cdv-save-the-date small {
+  letter-spacing: 5px;
+  font-size: 1em;
+  display: block;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  letter-spacing: 3px;
+  font-size: .65em;
 }
 /* @end 3. MAIN */
 /* @group 4. 3RD PARTY CSS
@@ -511,7 +519,7 @@ html[xmlns] .slides {
     content: '450px';
   }
   .slides li.cdv-auction {
-    background-image: url(../../img/cdv-auction-ml.jpg);
+    background-image: url(../../img/cdv-auction-m.jpg);
   }
   .slides li.bnb-chefs {
     background-image: url(../../img/bnb-chefs-m.jpg);
@@ -531,9 +539,6 @@ html[xmlns] .slides {
   .slides li.cdv-funny {
     background-image: url(../../img/cdv-funny-m.jpg);
   }
-  #main-container {
-    font-size: 86%;
-  }
 }
 /*/mediaquery*/
 /* @end 6A. MIN-WIDTH: 450px */
@@ -545,7 +550,6 @@ html[xmlns] .slides {
   }
   #main-container {
     padding: 10px 2% 0;
-    font-size: 100%;
   }
   .slides li.cdv-auction {
     background-image: url(../../img/cdv-auction-l.jpg);

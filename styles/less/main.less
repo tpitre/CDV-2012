@@ -30,6 +30,7 @@
 @main-transition: all .3s ease-in-out;
 @alt-link-color: white;
 @text-shadow-color: #999;
+@special-font: 'Parisian', cursive;
 
 .box-shadow (@h: 0, @v: 0, @blur: 3px, @color: rgba(0,0,0,.4)) {
 	-webkit-box-shadow: @arguments;
@@ -94,7 +95,7 @@ html {
   height: 100%;
 }
 body {
-  font: normal 100%/1.4 Helvetica, Arial, sans-serif;
+  font: normal 100%/1.4 'proxima-nova', 'Arial Narrow', sans-serif;  
   color: #3e4549;
   height: 100%;
   padding: 0;
@@ -122,17 +123,18 @@ h2,
 h3 {
   text-transform: uppercase;
   letter-spacing: -1px;
+  font-weight: normal;
 }
 h1 {
   font-size: 2.5em; /* 40 / 16 */
 }
-h2 {
-  font-size: 1.875em; /* 30 / 16 */
+h2, h3 {
+  font-size: 2.1em;  
+  font-family: @special-font;
 }
 h3 {
-  font-size: 1.375em; /* 22 / 16 */
-  font-weight: 700;
-  letter-spacing: 0;
+  font-size: 1.8em; 
+  margin: 16px 0 6px; 
 }
 
 
@@ -170,53 +172,41 @@ h3 {
 }
 
 #main-container {
-  padding: 10px 2% 0; 
-  font-size: 80%;  
+  padding: 20px 2% 0; 
 }
 
 #cdv {  
+  background-color: black;
   .cdv-save-the-date {
     position: relative;
-    margin: 0 auto;
+    margin: 30px auto;
     padding: 5px 0 0;
     display: block;  
     color: #fff;
-    text-align: center;
-    font-family: 'Oswald', 'franklin-gothic-urw-comp', 'Arial Narrow', sans-serif;	 
+    text-align: center;    	 
   	font-style: normal;
-  	line-height:normal;
   	font-weight: 400;
-  	text-transform: uppercase;
   	width: 100%;
-  	max-width: 540px;
+  	max-width: 640px;
+  	font-size: 1.4em;
+  	line-height: 1.5;
   	h1 {
   	  margin: 0 0 14px;
-  	}
-  	small {
-  	  letter-spacing: 5px;
-  	  font-size: 1em;
-  	  display: block;
-  	  margin-bottom: 2px;
-  	  &.small-btm {
-  	    letter-spacing: 3px;
-  	    font-size: .95em;
-  	  }
-  	}
+  	}  	
   	h2 {
-  	  .cdv-text-shadow;
-  	  margin: 0 0 8px;
-  	  font-size: 3em;      
+  	  margin: -6px 0 -11px;  	  
     }
-  	ul.krewe-list {
+  	ul {
   	  .no-indent;
   	  margin-bottom: 18px;
+  	  &.krewe-list {
+  	    max-width: 620px;
+  	  }
   	  li {
   	    display: inline;
   	    margin-right: 4px;
-  	    text-transform: none;
-  	    font-size: 1.2em;
-  	    letter-spacing: 0px;
-  	    line-height: 1.6;
+  	    text-transform: none; 	    
+  	    
   	    &:after {
   	      content: '•';
   	      margin-left: 8px;
@@ -226,11 +216,24 @@ h3 {
   	      content: '';
   	      margin-left: 0;
   	    }
+  	    &.special.first-special {
+  	      margin-top: 16px;
+  	    }
   	    &.special {
-  	      display: block;
-  	      margin-top: 10px;
+  	      display: block;  	      
+  	      margin-top: 3px;
+  	      text-align: left;
   	      strong {
+  	        text-transform: uppercase;
   	        margin-right: 6px;
+  	        font-family: @special-font;
+  	        letter-spacing: -1px;
+  	      }
+  	    }
+  	    &.special.first {
+  	      text-align: center;
+  	      span {
+  	        text-transform: uppercase;
   	      }
   	    }
   	  }
@@ -244,22 +247,11 @@ h3 {
   	    h3 {
   	      margin: 0;
   	      .dtstart {
-  	        font: 1.4em 'Limelight', cursive;
+  	        font: 1.4em 'Parisian', cursive;
   	        margin-right: 6px;
-  	      }
-  	      .summary {
-  	        .cdv-text-shadow;
   	      }
   	    }
   	  }
-  	}
-  	.small-btm {
-  	  display: block;
-  	  margin-bottom: 8px;
-  	}
-  	.cdv-btm {
-  	  clear: both;
-  	  margin-bottom: 14px;
   	}
   	ul.footer-social {
   	  .no-indent;
@@ -280,6 +272,29 @@ h3 {
   	      }
   	    }
   	  }
+  	}
+  	.bnb {
+  	  h3 {
+  	    font-family: "rosewood-std", Georgia, "Times New Roman", Times, serif;
+  	    letter-spacing: 0;
+  	    font-size: 2em;
+  	    .dtstart {
+  	      font-family: "rosewood-std-fill", Georgia, "Times New Roman", Times, serif;
+  	    }
+  	  }  	  
+  	}
+  	.footer-social li:after {
+  	  content: '';
+  	  margin-left: 0;
+  	}
+  	small {
+  	  letter-spacing: 5px;
+  	  font-size: 1em;
+  	  display: block;
+  	  text-transform: uppercase;
+  	  margin-bottom: 12px;
+  	  letter-spacing: 3px;
+  	  font-size: .65em;
   	}
   }
 }
@@ -441,7 +456,7 @@ h3 {
   	.slides {
   	  li {         
   	    &.cdv-auction {
-  	      background-image: url(../../img/cdv-auction-ml.jpg);
+  	      background-image: url(../../img/cdv-auction-m.jpg);
   	    }
   	    &.bnb-chefs {
   	      background-image: url(../../img/bnb-chefs-m.jpg);
@@ -463,9 +478,6 @@ h3 {
   	    }
   	  }
   	}
-  	#main-container {
-  	  font-size: 86%;  
-  	}
 	}/*/mediaquery*/
 	
 	/* @end 6A. MIN-WIDTH: 450px */
@@ -480,7 +492,6 @@ h3 {
      }
      #main-container {
        padding: 10px 2% 0; 
-       font-size: 100%;  
      }
      .slides {
        li {         

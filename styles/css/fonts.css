@@ -1,27 +1,14 @@
 /* @group FONTS
 ---------------------------------------------- */
 
-/* Trade Gothic Condensed No. 18 */
+/* Parisian */
 @font-face {
-  font-family: 'TradeGothicCondensedNo.18';
-  src: url('../../fonts/tradegothic-condeighteen-webfont.eot');
-  src: local('☺'),
-       url('../../fonts/tradegothic-condeighteen-webfont.eot?#iefix') format('embedded-opentype'),
-       url('../../fonts/tradegothic-condeighteen-webfont.woff') format('woff'), 
-       url('../../fonts/tradegothic-condeighteen-webfont.ttf') format('truetype'), 
-       url('../../fonts/tradegothic-condeighteen-webfont.svg#webfont5JXLdm9g') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* Trade Gothic Bold Condensed No. 20 */
-@font-face {
-  font-family: 'TradeGothicBoldCondensedNo.20';
-  src: url('../../fonts/tradegothic-boldcondtwenty-webfont.eot');
-  src: local('☺'), url('../../fonts/tradegothic-boldcondtwenty-webfont.woff') format('woff'), 
-       url('../../fonts/tradegothic-boldcondtwenty-webfont.eot?#iefix') format('embedded-opentype'),       
-       url('../../fonts/tradegothic-boldcondtwenty-webfont.ttf') format('truetype'), 
-       url('../../fonts/tradegothic-boldcondtwenty-webfont.svg#webfonts0ud2Rxo') format('svg');
+  font-family: 'Parisian';
+  src: url('../../fonts/parisian.eot');
+  src: url('../../fonts/parisian.eot?#iefix') format('embedded-opentype'),
+       url('../../fonts/parisian.woff') format('woff'),
+       url('../../fonts/parisian.ttf') format('truetype'),
+       url('../../fonts/parisian.svg#parisian') format('svg');
   font-weight: normal;
   font-style: normal;
 }
