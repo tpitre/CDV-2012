@@ -18,6 +18,147 @@
      6B. MIN-WIDTH: 700px
      
    =========================================== */
+/* @group CSS IMPORTS
+---------------------------------------------- */
+/* This file is part of Centage!. */
+/* Copyright (C) 2010 Jussi Jokinen <jussijokinen@iki.fi>. */
+/* Licenced under MIT licence */
+/*INITIALIZATION, PLEASE MODIFY TO YOUR LIKING*/
+/*page grid columns*/
+/*space (gutter) between columns. Use percentages, this is a FLUID grid, right?*/
+/*page size*/
+/*how much page wrapper is apart from browser edges */
+/*typography, baseline grid*/
+/*standard font size in pixels, but without 'px'*/
+/*line height as pixels but without "px".*//*INITIALIZATION ENDS *//* This file is part of Centage!. */
+/* Copyright (C) 2010 Jussi Jokinen <jussijokinen@iki.fi>. */
+/* Licenced under MIT licence */
+/* THE FOLLOWING ARE CALCULATED VARIABLES FOR YOUR PLEASURE */
+/* -------------------------------------------------------- */
+/* gutterless column width */
+/* column width when gutters are used */
+/* column + gutter */
+/* the true leading = line height - font size */
+/* body font size in percentages */
+/* line height in ems *//*this is needed for calculations*/
+/*this is needed for calculations*/
+/* -------------------------------------------------------------------- */
+/* @group core styles */
+/* content area standard properties, IF you need content to overflow visibly, use .clearfix after .col/.sub_col to override default*/
+.mod {
+  float: left;
+  overflow: hidden;
+}
+/*top level column *//*nested column inside parent container element */
+/* column based on full width of page */
+/* columns without gutters = check demo page to understand difference with .col-full */
+/* columns without gutters, first and last of row */
+/* helpers to add margins in full column widths *//*double margin bug fix/*
+
+/* helpers to keep layout in baseline and compenstate used borders */
+/* ------------------------------------------------------------------- */
+/* last element in row if used inside less */
+/* if called straight from xhtml */
+.last {
+  margin-right: 0 !important;
+}
+/* @end */
+/* @group other */
+/* default clear if content doesn't need to flow outside container */.clear {
+  overflow: hidden;
+  display: inline-block;
+  zoom: 1;
+  display: block;
+}
+/* alternative way to clear if your content needs to flow outside container */
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+/* @end */
+/* @group Grid */
+/* This grid is only for development purposes, you can overlay it on top of page to check consistency */
+#grid_wrapper,
+#grid_no_gut_wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  min-width: 40em;
+  width: 100%;
+  height: 5000px;
+}
+#grid {
+  height: 100%;
+}
+#grid .grid_col {
+  height: 100%;
+  width: 6.958333333333333%;
+  *width: 6.758333333333333%;
+  /* for IE */
+
+  float: left;
+  overflow: hidden;
+  margin-right: 1.5%;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  background: transparent url(../../img/grid_fluid.png) repeat-y 0 0;
+  -o-background-size: 500px 18px;
+  -khtml-background-size: 500px 18px;
+  -webkit-background-size: 500px 18px;
+  -moz-background-size: 500px 18px;
+  background-size: 500px 18px;
+  position: relative;
+}
+#grid .lastcol {
+  margin-right: 0 !important;
+  float: right !important;
+}
+#grid .right_grid_colborder {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  background: transparent url(../../img/grid_fluid.png) repeat-y 0 0;
+  background-position-right: -1px;
+  width: 1px;
+}
+#grid_no_gut {
+  height: 100%;
+}
+#grid_no_gut .center {
+  display: inline-block;
+  height: 100%;
+  width: 1.5%;
+  margin-left: 6.958333333333333%;
+  *margin-left: 6.858333333333333%;
+  float: left;
+  background: transparent url(../../img/grid_center.png) repeat-y 50% 50%;
+  position: relative;
+}
+#grid_toggle {
+  position: fixed;
+  *position: absolute;
+  z-index: 1000;
+  top: 1.2857142857142858em;
+  right: 1.5%;
+}
+/* @end */
+/* set the page dimensions */
+#wrap,
+#grid,
+#grid_no_gut {
+  max-width: 110em;
+  min-width: 40em;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0 3%;
+}
+/* @end IMPORTS */
 /* @group 1. LESS VARS AND DECLARATIONS
 ---------------------------------------------- */
 .border-box {
@@ -65,20 +206,15 @@
 .no-indent li {
   list-style: none;
 }
-.cdv-text-shadow {
-  font-style: italic;
-  text-shadow: -1px -1px 0 #999999, 1px -1px 0 #999999, -1px 1px 0 #999999, 1px 1px 0 #333333, -5px 3px 0px rgba(0, 0, 0, 0.6);
-}
 /* @end LESS VARS AND DECLARATIONS */
 /* @group 2. BASE
 ---------------------------------------------- */
-html {
-  height: 100%;
-}
 body {
-  font: normal 100%/1.4 Helvetica, Arial, sans-serif;
-  color: #3e4549;
-  height: 100%;
+  font-family: "proxima-nova-1", "proxima-nova-2", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 87.5%;
+  line-height: 1.2857142857142858em;
+  color: #4b4b4b;
+  background: #ffffff url('../../img/bg-pattern.gif') repeat center top;
   padding: 0;
   margin: 0;
 }
@@ -90,8 +226,8 @@ body:after {
 }
 a,
 a:visited {
-  color: #006699;
-  text-decoration: none;
+  color: #000000;
+  text-decoration: underline;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
@@ -101,186 +237,53 @@ a:visited {
 a:hover,
 a:focus,
 a:active {
-  color: #0081c2;
+  background-color: #eeeeee;
   text-decoration: none;
   outline: 0;
 }
 h1,
 h2,
-h3 {
-  text-transform: uppercase;
-  letter-spacing: -1px;
+h3,
+h4 {
+  font-weight: bold;
 }
 h1 {
-  font-size: 2.5em;
-  /* 40 / 16 */
-
+  font-size: 5em;
+  line-height: 1.0285714285714287em;
+  margin-bottom: 0.2571428571428572em;
 }
 h2 {
-  font-size: 1.875em;
-  /* 30 / 16 */
-
+  font-size: 3em;
+  line-height: 0.8571428571428572em;
+  margin-bottom: 0.4285714285714286em;
+  margin-top: 0.8571428571428572em;
 }
 h3 {
-  font-size: 1.375em;
-  /* 22 / 16 */
-
-  font-weight: 700;
-  letter-spacing: 0;
+  font-size: 1.5em;
+  line-height: 0.8571428571428572em;
+  margin-bottom: 0.8571428571428572em;
+  margin-top: 0.8571428571428572em;
+}
+p {
+  margin-bottom: 1.2857142857142858em;
+}
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
 }
 /* @end BASE */
 /* @group 3. MAIN
 ---------------------------------------------- */
-.slides li {
-  height: 100%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-.slides li.cdv-auction {
-  background-image: url(../../img/cdv-auction-s.jpg);
-}
-.slides li.bnb-chefs {
-  background-image: url(../../img/bnb-chefs-s.jpg);
-}
-.slides li.cdv-room {
-  background-image: url(../../img/cdv-room-s.jpg);
-}
-.slides li.cdv-crocs {
-  background-image: url(../../img/cdv-crocs-s.jpg);
-}
-.slides li.bnb-fiddle {
-  background-image: url(../../img/bnb-fiddle-s.jpg);
-}
-.slides li.bnb-boots {
-  background-image: url(../../img/bnb-boots-s.jpg);
-}
-.slides li.cdv-funny {
-  background-image: url(../../img/cdv-funny-s.jpg);
-}
 #main-container {
-  padding: 10px 2% 0;
-  font-size: 80%;
-}
-#cdv .cdv-save-the-date {
-  position: relative;
-  margin: 0 auto;
-  padding: 5px 0 0;
-  display: block;
-  color: #fff;
-  text-align: center;
-  font-family: 'Oswald', 'franklin-gothic-urw-comp', 'Arial Narrow', sans-serif;
-  font-style: normal;
-  line-height: normal;
-  font-weight: 400;
-  text-transform: uppercase;
-  width: 100%;
-  max-width: 540px;
-}
-#cdv .cdv-save-the-date h1 {
-  margin: 0 0 14px;
-}
-#cdv .cdv-save-the-date small {
-  letter-spacing: 5px;
-  font-size: 1em;
-  display: block;
-  margin-bottom: 2px;
-}
-#cdv .cdv-save-the-date small.small-btm {
-  letter-spacing: 3px;
-  font-size: .95em;
-}
-#cdv .cdv-save-the-date h2 {
-  font-style: italic;
-  text-shadow: -1px -1px 0 #999999, 1px -1px 0 #999999, -1px 1px 0 #999999, 1px 1px 0 #333333, -5px 3px 0px rgba(0, 0, 0, 0.6);
-  margin: 0 0 8px;
-  font-size: 3em;
-}
-#cdv .cdv-save-the-date ul.krewe-list {
-  margin: 0;
-  padding: 0;
-  margin-bottom: 18px;
-}
-#cdv .cdv-save-the-date ul.krewe-list li {
-  list-style: none;
-}
-#cdv .cdv-save-the-date ul.krewe-list li {
-  display: inline;
-  margin-right: 4px;
-  text-transform: none;
-  font-size: 1.2em;
-  letter-spacing: 0px;
-  line-height: 1.6;
-}
-#cdv .cdv-save-the-date ul.krewe-list li:after {
-  content: '•';
-  margin-left: 8px;
-}
-#cdv .cdv-save-the-date ul.krewe-list li.last:after,
-#cdv .cdv-save-the-date ul.krewe-list li.special:after {
-  content: '';
-  margin-left: 0;
-}
-#cdv .cdv-save-the-date ul.krewe-list li.special {
-  display: block;
-  margin-top: 10px;
-}
-#cdv .cdv-save-the-date ul.krewe-list li.special strong {
-  margin-right: 6px;
-}
-#cdv .cdv-save-the-date ul.cdv-dates {
-  margin: 0;
-  padding: 0;
-  clear: both;
-  margin-bottom: 12px;
-}
-#cdv .cdv-save-the-date ul.cdv-dates li {
-  list-style: none;
-}
-#cdv .cdv-save-the-date ul.cdv-dates li {
-  font-size: 1.6em;
-}
-#cdv .cdv-save-the-date ul.cdv-dates li h3 {
-  margin: 0;
-}
-#cdv .cdv-save-the-date ul.cdv-dates li h3 .dtstart {
-  font: 1.4em 'Limelight', cursive;
-  margin-right: 6px;
-}
-#cdv .cdv-save-the-date ul.cdv-dates li h3 .summary {
-  font-style: italic;
-  text-shadow: -1px -1px 0 #999999, 1px -1px 0 #999999, -1px 1px 0 #999999, 1px 1px 0 #333333, -5px 3px 0px rgba(0, 0, 0, 0.6);
-}
-#cdv .cdv-save-the-date .small-btm {
-  display: block;
-  margin-bottom: 8px;
-}
-#cdv .cdv-save-the-date .cdv-btm {
-  clear: both;
-  margin-bottom: 14px;
-}
-#cdv .cdv-save-the-date ul.footer-social {
-  margin: 0;
-  padding: 0;
-}
-#cdv .cdv-save-the-date ul.footer-social li {
-  list-style: none;
-}
-#cdv .cdv-save-the-date ul.footer-social li {
-  display: inline-block;
-  margin-right: 10px;
-}
-#cdv .cdv-save-the-date ul.footer-social li a {
-  background: transparent url(../../img/icon-twitter.png) no-repeat center center;
-  display: block;
-  height: 40px;
-  width: 30px;
-  float: left;
-  text-indent: -9999px;
-}
-#cdv .cdv-save-the-date ul.footer-social li.social-fb a {
-  background-image: url(../../img/icon-facebook.png);
+  padding: 410px 0;
+  margin: 10px;
+  background-color: #fff;
+  max-width: 1320px;
+  -webkit-box-shadow: 0 0 20px #000000;
+  -moz-box-shadow: 0 0 20px #000000;
+  box-shadow: 0 0 20px #000000;
 }
 /* @end 3. MAIN */
 /* @group 4. 3RD PARTY CSS
@@ -320,6 +323,10 @@ h3 {
 }
 /* Clearfix for the .slides element */
 .slides:after {
+  overflow: hidden;
+  display: inline-block;
+  zoom: 1;
+  display: block;
   content: ".";
   display: block;
   clear: both;
@@ -460,47 +467,6 @@ html[xmlns] .slides {
   padding: 10px 2% 0;
   font-size: 100%;
 }
-.lt-ie9 .slides li.cdv-auction {
-  filter: progid:dximagetransform.microsoft.alphaimageloader(src='../../img/cdv-auction-l.jpg', sizingMethod='scale');
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/cdv-auction-l.jpg', sizingMethod='scale')";
-  background-image: url(../../img/cdv-auction-l.jpg);
-}
-.lt-ie9 .slides li.bnb-chefs {
-  filter: progid:dximagetransform.microsoft.alphaimageloader(src='../../img/bnb-chefs-l.jpg', sizingMethod='scale');
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/bnb-chefs-l.jpg', sizingMethod='scale')";
-  background-image: url(../../img/bnb-chefs-l.jpg);
-}
-.lt-ie9 .slides li.cdv-room {
-  filter: progid:dximagetransform.microsoft.alphaimageloader(src='../../img/cdv-room-l.jpg', sizingMethod='scale');
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/cdv-room-l.jpg', sizingMethod='scale')";
-  background-image: url(../../img/cdv-room-l.jpg);
-}
-.lt-ie9 .slides li.cdv-crocs {
-  filter: progid:dximagetransform.microsoft.alphaimageloader(src='../../img/cdv-crocs-l.jpg', sizingMethod='scale');
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/cdv-crocs-l.jpg', sizingMethod='scale')";
-  background-image: url(../../img/cdv-crocs-l.jpg);
-}
-.lt-ie9 .slides li.bnb-fiddle {
-  filter: progid:dximagetransform.microsoft.alphaimageloader(src='../../img/bnb-fiddle-l.jpg', sizingMethod='scale');
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/bnb-fiddle-l.jpg', sizingMethod='scale')";
-  background-image: url(../../img/bnb-fiddle-l.jpg);
-}
-.lt-ie9 .slides li.bnb-boots {
-  filter: progid:dximagetransform.microsoft.alphaimageloader(src='../../img/bnb-boots-l.jpg', sizingMethod='scale');
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/bnb-boots-l.jpg', sizingMethod='scale')";
-  background-image: url(../../img/bnb-boots-l.jpg);
-}
-.lt-ie9 .slides li.cdv-funny {
-  filter: progid:dximagetransform.microsoft.alphaimageloader(src='../../img/cdv-funny-l.jpg', sizingMethod='scale');
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../img/cdv-funny-l.jpg', sizingMethod='scale')";
-  background-image: url(../../img/cdv-funny-l.jpg);
-}
-.lt-ie9 #cdv .cdv-save-the-date {
-  max-width: 560px;
-}
-.lt-ie9 #cdv .cdv-save-the-date ul.cdv-dates li h3 .dtstart {
-  font-size: 1.2em;
-}
 /* @group 5. CRAPTASTIC IE STYLES */
 /* @group 6. MEDIA QUERIES
 --------------------------------------------- */
@@ -510,30 +476,6 @@ html[xmlns] .slides {
   body:after {
     content: '450px';
   }
-  .slides li.cdv-auction {
-    background-image: url(../../img/cdv-auction-ml.jpg);
-  }
-  .slides li.bnb-chefs {
-    background-image: url(../../img/bnb-chefs-m.jpg);
-  }
-  .slides li.cdv-room {
-    background-image: url(../../img/cdv-room-m.jpg);
-  }
-  .slides li.cdv-crocs {
-    background-image: url(../../img/cdv-crocs-m.jpg);
-  }
-  .slides li.bnb-fiddle {
-    background-image: url(../../img/bnb-fiddle-m.jpg);
-  }
-  .slides li.bnb-boots {
-    background-image: url(../../img/bnb-boots-m.jpg);
-  }
-  .slides li.cdv-funny {
-    background-image: url(../../img/cdv-funny-m.jpg);
-  }
-  #main-container {
-    font-size: 86%;
-  }
 }
 /*/mediaquery*/
 /* @end 6A. MIN-WIDTH: 450px */
@@ -542,31 +484,6 @@ html[xmlns] .slides {
 @media all and (min-width: 700px) {
   body:after {
     content: '700px';
-  }
-  #main-container {
-    padding: 10px 2% 0;
-    font-size: 100%;
-  }
-  .slides li.cdv-auction {
-    background-image: url(../../img/cdv-auction-l.jpg);
-  }
-  .slides li.bnb-chefs {
-    background-image: url(../../img/bnb-chefs-l.jpg);
-  }
-  .slides li.cdv-room {
-    background-image: url(../../img/cdv-room-l.jpg);
-  }
-  .slides li.cdv-crocs {
-    background-image: url(../../img/cdv-crocs-l.jpg);
-  }
-  .slides li.bnb-fiddle {
-    background-image: url(../../img/bnb-fiddle-l.jpg);
-  }
-  .slides li.bnb-boots {
-    background-image: url(../../img/bnb-boots-l.jpg);
-  }
-  .slides li.cdv-funny {
-    background-image: url(../../img/cdv-funny-l.jpg);
   }
 }
 /*/mediaquery*/

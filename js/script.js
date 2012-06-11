@@ -154,8 +154,8 @@ if (Modernizr.touch) {
 	// init the methods
 	cdv.miscFunct();
 	cdv.breakPoints();
-	cdv.addPlaceHolder();
-	
+	cdv.addPlaceHolder();	
+		
 })(jQuery);
 
 $(window).load(function() {

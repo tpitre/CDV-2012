@@ -1,0 +1,354 @@
+/* This file is part of Centage!. */
+/* Copyright (C) 2010 Jussi Jokinen <jussijokinen@iki.fi>. */
+/* Licenced under MIT licence */
+/*INITIALIZATION, PLEASE MODIFY TO YOUR LIKING*/
+/*page grid columns*/
+/*space (gutter) between columns. Use percentages, this is a FLUID grid, right?*/
+/*page size*/
+/*how much page wrapper is apart from browser edges */
+/*typography, baseline grid*/
+/*standard font size in pixels, but without 'px'*/
+/*line height as pixels but without "px".*//*INITIALIZATION ENDS */
+/* This file is part of Centage!. */
+/* Copyright (C) 2010 Jussi Jokinen <jussijokinen@iki.fi>. */
+/* Licenced under MIT licence */
+/* THE FOLLOWING ARE CALCULATED VARIABLES FOR YOUR PLEASURE */
+/* -------------------------------------------------------- */
+/* gutterless column width */
+/* column width when gutters are used */
+/* column + gutter */
+/* the true leading = line height - font size */
+/* body font size in percentages */
+/* line height in ems *//*this is needed for calculations*/
+/*this is needed for calculations*/
+/* -------------------------------------------------------------------- */
+/* @group reset */
+/* You can use your preferred reset instead, this one is  
+  html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
+  v1.4 2009-07-27 | Authors: Eric Meyer & Richard Clark
+  html5doctor.com/html-5-reset-stylesheet/
+*/
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+nav ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+del {
+  text-decoration: line-through;
+}
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+/* tables still need cellspacing="0" in the markup */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+input,
+select {
+  vertical-align: middle;
+}
+/* @end */
+/* @group body styles */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 75%;
+  line-height: 1.5em;
+}
+/* @end */
+/* @group core styles */
+/* content area standard properties, IF you need content to overflow visibly, use .clearfix after .col/.sub_col to override default*/
+.mod {
+  float: left;
+  overflow: hidden;
+}
+/*top level column *//*nested column inside parent container element */
+/* column based on full width of page */
+/* columns without gutters = check demo page to understand difference with .col-full */
+/* columns without gutters, first and last of row */
+/* helpers to add margins in full column widths *//*double margin bug fix/*
+
+/* helpers to keep layout in baseline and compenstate used borders */
+/* ------------------------------------------------------------------- */
+/* last element in row if used inside less */
+/* if called straight from xhtml */
+.last {
+  margin-right: 0 !important;
+}
+/* @end */
+/* @group other */
+/* default clear if content doesn't need to flow outside container */.clear {
+  overflow: hidden;
+  display: inline-block;
+  zoom: 1;
+  display: block;
+}
+/* alternative way to clear if your content needs to flow outside container */
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+/* @end */
+/* @group Grid */
+/* This grid is only for development purposes, you can overlay it on top of page to check consistency */
+#grid_wrapper,
+#grid_no_gut_wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  min-width: 40em;
+  width: 100%;
+  height: 5000px;
+}
+#grid {
+  height: 100%;
+}
+#grid .grid_col {
+  height: 100%;
+  width: 6.958333333333333%;
+  *width: 6.758333333333333%;
+  /* for IE */
+
+  float: left;
+  overflow: hidden;
+  margin-right: 1.5%;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  background: transparent url(img/grid_fluid.png) repeat-y 0 0;
+  -o-background-size: 500px 18px;
+  -khtml-background-size: 500px 18px;
+  -webkit-background-size: 500px 18px;
+  -moz-background-size: 500px 18px;
+  background-size: 500px 18px;
+  position: relative;
+}
+#grid .lastcol {
+  margin-right: 0 !important;
+  float: right !important;
+}
+#grid .right_grid_colborder {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  background: transparent url(img/grid_fluid.png) repeat-y 0 0;
+  background-position-right: -1px;
+  width: 1px;
+}
+#grid_no_gut {
+  height: 100%;
+}
+#grid_no_gut .center {
+  display: inline-block;
+  height: 100%;
+  width: 1.5%;
+  margin-left: 6.958333333333333%;
+  *margin-left: 6.858333333333333%;
+  float: left;
+  background: transparent url(img/grid_center.png) repeat-y 50% 50%;
+  position: relative;
+}
+#grid_toggle {
+  position: fixed;
+  *position: absolute;
+  z-index: 1000;
+  top: 1.5em;
+  right: 1.5%;
+}
+/* @end */
+/* set the page dimensions */
+#wrap,
+#grid,
+#grid_no_gut {
+  max-width: 110em;
+  min-width: 40em;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0 3%;
+}
+/* This file is part of Centage!. */
+/* Copyright (C) 2010 Jussi Jokinen <jussijokinen@iki.fi>. */
+/* Licenced under MIT licence */
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-weight: bold;
+}
+h1 {
+  font-size: 5em;
+  line-height: 1.2em;
+  margin-bottom: 0.3em;
+}
+h2 {
+  font-size: 3em;
+  line-height: 1em;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+h3 {
+  font-size: 1.5em;
+  line-height: 1em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+p {
+  margin-bottom: 1.5em;
+}
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
+}
+/* This file is part of Centage!. */
+/* Copyright (C) 2010 Jussi Jokinen <jussijokinen@iki.fi>. */
+/* Licenced under MIT licence */
+.h-navi {
+  margin: 0;
+  list-style-type: none;
+  overflow: hidden;
+  display: inline-block;
+  zoom: 1;
+  display: block;
+}
+.h-navi li {
+  float: left;
+  width: auto;
+  display: block;
+}

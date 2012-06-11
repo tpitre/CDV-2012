@@ -198,6 +198,7 @@ h3 {
   display: inline;
   margin-right: 4px;
   text-transform: none;
+  white-space: nowrap;
 }
 #cdv .cdv-save-the-date ul li:after {
   content: '•';
@@ -215,6 +216,7 @@ h3 {
   display: block;
   margin-top: 3px;
   text-align: left;
+  white-space: normal;
 }
 #cdv .cdv-save-the-date ul li.special strong {
   text-transform: uppercase;
