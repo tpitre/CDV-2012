@@ -52,6 +52,8 @@
 @main-font-color: #4b4b4b;
 @main-link-color: #000;
 @main-hover-color: #eee;
+@main-nav-hover-link-color: #fff;
+@main-nav-hover-bg-color: #333;
 @main-transition: all .3s ease-in-out;
 
 .box-shadow (@h: 0, @v: 0, @blur: 3px, @color: rgba(0,0,0,.4)) {
@@ -179,13 +181,59 @@ em { font-style: italic; }
 /* @group 3. MAIN
 ---------------------------------------------- */
 
-#main-container {
-  padding: @line @gut; 
+#main-container {   
   margin: 10px;
   background-color: #fff;
   max-width: @max-width;
   border-width:25px 30px 10px 20px;
   .box-shadow(0, 0, 20px, #000);
+}
+
+#all-sites-nav {
+  display: none;
+}
+
+#main-nav {
+  ul {
+  	.no-indent;
+  	margin: 0 auto;
+  	overflow: hidden;
+  	li {
+  	  font-size: .8em;
+  		text-transform: uppercase;
+  	  float: left;
+  	  width: 33%;
+  	  border-bottom: 1px solid rgba(0,0,0,.4);
+  	  &.menu-visit,
+  	  &.menu-krewe,
+  	  &.menu-gallery,
+  	  &.menu-news {
+  	    border-left: 1px solid #eee;
+  	    border-left: 1px solid rgba(0,0,0,.4);          
+  	  }
+  	  &.menu-auction {
+  	  	clear: left;
+  	  }
+  	  &.menu-krewe,
+  	  &.menu-gallery {
+  	  	width: 33.8%;
+  	  }
+  	  a {
+  	    display: block;
+  	    text-align: center;
+  	    padding: 6px 0 4px;
+  	    width: 100%;
+  	    text-decoration: none;
+  	    background-color: #eee;
+ 	      text-decoration: none;
+  		  &:hover {
+  		  	color: @main-nav-hover-link-color; 
+  		  	background-color: @main-nav-hover-bg-color; 		  	
+  		  }
+  		}
+  	}
+  }
+  
 }
 
 #blocks img {

@@ -287,7 +287,6 @@ em {
 /* @group 3. MAIN
 ---------------------------------------------- */
 #main-container {
-  padding: 1.2857142857142858em 1.5%;
   margin: 10px;
   background-color: #fff;
   max-width: 1320px;
@@ -295,6 +294,52 @@ em {
   -webkit-box-shadow: 0 0 20px #000000;
   -moz-box-shadow: 0 0 20px #000000;
   box-shadow: 0 0 20px #000000;
+}
+#all-sites-nav {
+  display: none;
+}
+#main-nav ul {
+  margin: 0;
+  padding: 0;
+  margin: 0 auto;
+  overflow: hidden;
+}
+#main-nav ul li {
+  list-style: none;
+}
+#main-nav ul li {
+  font-size: .8em;
+  text-transform: uppercase;
+  float: left;
+  width: 33%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+#main-nav ul li.menu-visit,
+#main-nav ul li.menu-krewe,
+#main-nav ul li.menu-gallery,
+#main-nav ul li.menu-news {
+  border-left: 1px solid #eee;
+  border-left: 1px solid rgba(0, 0, 0, 0.4);
+}
+#main-nav ul li.menu-auction {
+  clear: left;
+}
+#main-nav ul li.menu-krewe,
+#main-nav ul li.menu-gallery {
+  width: 33.8%;
+}
+#main-nav ul li a {
+  display: block;
+  text-align: center;
+  padding: 6px 0 4px;
+  width: 100%;
+  text-decoration: none;
+  background-color: #eee;
+  text-decoration: none;
+}
+#main-nav ul li a:hover {
+  color: #ffffff;
+  background-color: #333333;
 }
 #blocks img {
   width: 100%;
