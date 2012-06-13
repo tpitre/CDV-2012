@@ -68,7 +68,34 @@ if (Modernizr.touch) {
     // cache static elements used on load  	
   	miscFunct: function(){
   		
+  		var $sponsorCarousel = $('#sponsors');
   		
+  		// load the elastislideer for the restaurant logos
+  		if ($().carouFredSel) {
+    		$sponsorCarousel.show().find('ul').carouFredSel({
+    			circular: true,
+    			infinite: false,
+    			width: '100%',
+    			height: 90,
+    			items: {
+    				height: 90
+    			},
+    			scroll: {
+    				wipe: true,
+    				duration: 1000,
+    				easing: 'easeInOutQuad',
+    				pauseOnHover: true,
+    			},
+    			prev: {
+    				button: '.logo-nav-prev',
+    				key: 'left'
+    			},
+    			next: {
+    				button: '.logo-nav-next',
+    				key: 'right'
+    			}
+    		});    		
+     	}
   		
   	},
   	
@@ -160,20 +187,18 @@ if (Modernizr.touch) {
 
 $(window).load(function() {
   
-  var $flexSlider = $('.flexslider');
+  var $flexSlider = $('#save-the-date').find('.flexslider'),
+  		$mainSlider = $('#main-content').find('.flexslider');
 
-  var flexBefore = function(slider) {
-  	//console.log($('li:visible'));
-	  $flexSlider.find('li:visible').next().find('img').animate({ marginLeft: '-6%', marginTop: '-6%', width: '110%' }, 10000);
-  }  
-  
   // load flexslider
 	$flexSlider.flexslider({
 	  animation: 'fade',
 	  slideshowSpeed: 9000,
 	  animationDuration: 4200
-	  //before: flexBefore
 	});
+  
+  // load flexslider
+	$mainSlider.flexslider();
   
 });
 

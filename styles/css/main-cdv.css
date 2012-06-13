@@ -24,13 +24,7 @@
 /* Copyright (C) 2010 Jussi Jokinen <jussijokinen@iki.fi>. */
 /* Licenced under MIT licence */
 /*INITIALIZATION, PLEASE MODIFY TO YOUR LIKING*/
-/*page grid columns*/
-/*space (gutter) between columns. Use percentages, this is a FLUID grid, right?*/
-/*page size*/
-/*how much page wrapper is apart from browser edges */
-/*typography, baseline grid*/
-/*standard font size in pixels, but without 'px'*/
-/*line height as pixels but without "px".*//*INITIALIZATION ENDS *//* This file is part of Centage!. */
+/*INITIALIZATION ENDS *//* This file is part of Centage!. */
 /* Copyright (C) 2010 Jussi Jokinen <jussijokinen@iki.fi>. */
 /* Licenced under MIT licence */
 /* THE FOLLOWING ARE CALCULATED VARIABLES FOR YOUR PLEASURE */
@@ -87,7 +81,7 @@
   left: 0;
   top: 0;
   z-index: 100;
-  min-width: 40em;
+  min-width: 320px;
   width: 100%;
   height: 5000px;
 }
@@ -152,8 +146,8 @@
 #wrap,
 #grid,
 #grid_no_gut {
-  max-width: 110em;
-  min-width: 40em;
+  max-width: 1320px;
+  min-width: 320px;
   margin: 0 auto;
   overflow: hidden;
   padding: 0 3%;
@@ -161,6 +155,10 @@
 /* @end IMPORTS */
 /* @group 1. LESS VARS AND DECLARATIONS
 ---------------------------------------------- */
+/*page grid columns*/
+/*space (gutter) between columns. Use percentages, this is a FLUID grid, right?*/
+/*page size*/
+/*how much page wrapper is apart from browser edges */
 .border-box {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -210,9 +208,7 @@
 /* @group 2. BASE
 ---------------------------------------------- */
 body {
-  font-family: "proxima-nova-1", "proxima-nova-2", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 87.5%;
-  line-height: 1.2857142857142858em;
+  font-family: "proxima-nova", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #4b4b4b;
   background: #ffffff url('../../img/bg-pattern.gif') repeat center top;
   padding: 0;
@@ -249,20 +245,34 @@ h4 {
 }
 h1 {
   font-size: 5em;
+  font-family: "Parisian", cursive;
+  text-transform: uppercase;
   line-height: 1.0285714285714287em;
   margin-bottom: 0.2571428571428572em;
 }
 h2 {
-  font-size: 3em;
-  line-height: 0.8571428571428572em;
-  margin-bottom: 0.4285714285714286em;
-  margin-top: 0.8571428571428572em;
+  font-size: 2.4em;
+  line-height: 1.0714285714285716em;
+  margin-bottom: 0.5357142857142858em;
+  margin-top: 1.0714285714285716em;
 }
+h3,
+h4 {
+  font-size: 1.7em;
+  line-height: 0.7563025210084034em;
+  margin-bottom: 0.7563025210084034em;
+  margin-top: 0.7563025210084034em;
+}
+h4 {
+  font-size: 1.2em;
+}
+h2,
 h3 {
-  font-size: 1.5em;
-  line-height: 0.8571428571428572em;
-  margin-bottom: 0.8571428571428572em;
-  margin-top: 0.8571428571428572em;
+  /*font-family: @font-secondary;*/
+
+  letter-spacing: 2px;
+  font-weight: 100;
+  text-transform: uppercase;
 }
 p {
   margin-bottom: 1.2857142857142858em;
@@ -277,13 +287,17 @@ em {
 /* @group 3. MAIN
 ---------------------------------------------- */
 #main-container {
-  padding: 410px 0;
+  padding: 1.2857142857142858em 1.5%;
   margin: 10px;
   background-color: #fff;
   max-width: 1320px;
+  border-width: 25px 30px 10px 20px;
   -webkit-box-shadow: 0 0 20px #000000;
   -moz-box-shadow: 0 0 20px #000000;
   box-shadow: 0 0 20px #000000;
+}
+#blocks img {
+  width: 100%;
 }
 /* @end 3. MAIN */
 /* @group 4. 3RD PARTY CSS
@@ -349,10 +363,8 @@ html[xmlns] .slides {
 /* FlexSlider Default Theme */
 .flexslider {
   background: #fff;
-  position: fixed;
   zoom: 1;
   width: 100%;
-  height: 100%;
 }
 .flexslider .slides {
   zoom: 1;
