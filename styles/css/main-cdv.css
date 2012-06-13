@@ -204,6 +204,22 @@
 .no-indent li {
   list-style: none;
 }
+.border-top {
+  border-top: 1px solid #eee;
+  border-top: 1px solid rgba(0, 0, 0, 0.4);
+}
+.border-right {
+  border-right: 1px solid #eee;
+  border-right: 1px solid rgba(0, 0, 0, 0.4);
+}
+.border-bottom {
+  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+.border-left {
+  border-left: 1px solid #eee;
+  border-left: 1px solid rgba(0, 0, 0, 0.4);
+}
 /* @end LESS VARS AND DECLARATIONS */
 /* @group 2. BASE
 ---------------------------------------------- */
@@ -244,11 +260,11 @@ h4 {
   font-weight: bold;
 }
 h1 {
-  font-size: 5em;
+  font-size: 3em;
   font-family: "Parisian", cursive;
   text-transform: uppercase;
-  line-height: 1.0285714285714287em;
-  margin-bottom: 0.2571428571428572em;
+  line-height: 1.0714285714285716em;
+  margin: 12px 0;
 }
 h2 {
   font-size: 2.4em;
@@ -298,37 +314,41 @@ em {
 #all-sites-nav {
   display: none;
 }
-#main-nav ul {
+#main-header #main-nav ul {
   margin: 0;
   padding: 0;
-  margin: 0 auto;
+  margin: 0 auto ;
+  padding-bottom: 1px;
   overflow: hidden;
+  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
 }
-#main-nav ul li {
+#main-header #main-nav ul li {
   list-style: none;
 }
-#main-nav ul li {
+#main-header #main-nav ul li {
   font-size: .8em;
   text-transform: uppercase;
   float: left;
   width: 33%;
+  border-bottom: 1px solid #eee;
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
 }
-#main-nav ul li.menu-visit,
-#main-nav ul li.menu-krewe,
-#main-nav ul li.menu-gallery,
-#main-nav ul li.menu-news {
+#main-header #main-nav ul li.menu-visit,
+#main-header #main-nav ul li.menu-krewe,
+#main-header #main-nav ul li.menu-gallery,
+#main-header #main-nav ul li.menu-news {
   border-left: 1px solid #eee;
   border-left: 1px solid rgba(0, 0, 0, 0.4);
 }
-#main-nav ul li.menu-auction {
+#main-header #main-nav ul li.menu-auction {
   clear: left;
 }
-#main-nav ul li.menu-krewe,
-#main-nav ul li.menu-gallery {
+#main-header #main-nav ul li.menu-krewe,
+#main-header #main-nav ul li.menu-gallery {
   width: 33.8%;
 }
-#main-nav ul li a {
+#main-header #main-nav ul li a {
   display: block;
   text-align: center;
   padding: 6px 0 4px;
@@ -337,9 +357,22 @@ em {
   background-color: #eee;
   text-decoration: none;
 }
-#main-nav ul li a:hover {
+#main-header #main-nav ul li a:hover {
   color: #ffffff;
   background-color: #333333;
+}
+#main-header h1.logo-header {
+  text-align: center;
+  margin: 22px auto;
+  padding: 0 10%;
+}
+#main-content {
+  padding: 0 1.5%;
+  text-align: center;
+}
+.hr {
+  display: block;
+  margin: 0 auto;
 }
 #blocks img {
   width: 100%;
