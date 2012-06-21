@@ -68,7 +68,7 @@ if (Modernizr.touch) {
     // cache static elements used on load  	
   	miscFunct: function(){
   		
-  		var $sponsorCarousel = $('#sponsors');
+  		var $sponsorCarousel = $('.sponsor-carousel');
   		
   		// load the elastislideer for the restaurant logos
   		if ($().carouFredSel) {
@@ -87,15 +87,18 @@ if (Modernizr.touch) {
     				pauseOnHover: true,
     			},
     			prev: {
-    				button: '.logo-nav-prev',
+    				button: '.sponsor-nav-prev',
     				key: 'left'
     			},
     			next: {
-    				button: '.logo-nav-next',
+    				button: '.sponsor-nav-next',
     				key: 'right'
     			}
     		});    		
      	}
+     	
+     	// add even class to even list items
+      $('.block:nth-child(even)').addClass('even');
   		
   	},
   	
@@ -194,11 +197,17 @@ $(window).load(function() {
 	$flexSlider.flexslider({
 	  animation: 'fade',
 	  slideshowSpeed: 9000,
-	  animationDuration: 4200
+	  animationDuration: 4200,
+	  prevText: 'v',
+	  nextText: 'u',
 	});
   
   // load flexslider
-	$mainSlider.flexslider();
+	$mainSlider.flexslider({
+	  animation: 'fade',
+	  prevText: 'v',
+	  nextText: 'u',
+	});
   
 });
 

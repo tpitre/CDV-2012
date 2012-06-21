@@ -1,0 +1,159 @@
+/* @group 1. LESS VARS AND DECLARATIONS
+============================================= */
+
+/* @group STRUCTURE
+--------------------------------------------- */
+
+/* page grid columns */
+@grid: 12;
+
+/* gutter space */
+@gut: 2.3%;
+
+/* page size */
+@max-width: 1224px;
+@min-width: 320px;
+@page-padding: @gut*2;
+
+/* @end STRUCTURE */
+
+/* @group FONTS
+--------------------------------------------- */
+
+@font: "proxima-nova", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-secondary: "Parisian", cursive;
+@font-tertiary: "futura-pt", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+@fontpx: 14;
+@linepx: 18;
+
+/* @end FONTS */
+
+/* @group COLORS
+--------------------------------------------- */
+
+@main-font-color: #4b4b4b;
+@alt-font-color: #999;
+@main-link-color: #000;
+@alt-link-color: #fff;
+@main-header-color: #000;
+@alt-header-color: #fff;
+@main-hover-color: #eee;
+@main-border-color: #999;
+@main-bg-color: #000;
+@main-nav-bg-color: #eee;
+@main-nav-hover-link-color: #fff;
+@main-nav-hover-bg-color: #333;
+@main-transition: all .3s ease-in-out;
+@img-bg-color: #fff;
+@alt-border-color: #fff;
+
+/* @end COLORS */
+
+/* @group FUNCTIONS
+--------------------------------------------- */
+
+.box-shadow (@h: 0, @v: 0, @blur: 3px, @color: rgba(0,0,0,.4)) {
+	-webkit-box-shadow: @arguments;
+	-moz-box-shadow: @arguments;
+	box-shadow: @arguments;
+}
+
+.rotate (@deg: 4deg) {
+	-webkit-transform: rotate(@deg);
+	-moz-transform: rotate(@deg);
+	-o-transform: rotate(@deg);
+	-ms-transform: rotate(@deg);
+	transform: rotate(@deg);
+}
+
+/* @end FUNCTIONS */
+
+/* @group CLASSES
+--------------------------------------------- */
+
+.border-box {
+  -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.rounded {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.clear {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.trans {
+  -webkit-transition: @main-transition;
+  -moz-transition: @main-transition;
+  -o-transition: @main-transition;
+  -ms-transition: @main-transition;
+  transition: @main-transition;
+}
+.bg-cover {  
+  -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.no-trans {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  -ms-transition: none;
+  transition: none;
+}
+.no-indent {  
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
+  }
+}
+.border {
+	border: 1px solid #eee;
+	border: 1px solid rgba(0,0,0,.4);
+}
+.border-top {
+  border-top: 1px solid #eee;
+  border-top: 1px solid rgba(0,0,0,.4);
+}
+.border-right {
+  border-right: 1px solid #eee;
+  border-right: 1px solid rgba(0,0,0,.4);
+}
+.border-bottom {
+  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid rgba(0,0,0,.4);
+}
+.border-left {
+  border-left: 1px solid #eee;
+  border-left: 1px solid rgba(0,0,0,.4);
+}
+.border-double {
+	border: 4px double @main-border-color;
+}
+.border-double-bottom {
+	border-bottom: 4px double @main-border-color;
+}
+.border-bottom-dotted {
+  border-bottom: 1px dotted #eee;
+  border-bottom: 1px dotted rgba(0,0,0,.2);
+}
+.img-style {
+	padding: 4px;
+	background-color: @img-bg-color;
+	.border;
+	.border-box;
+}
+
+/* @end CLASSES */
+
+/* @end LESS VARS AND DECLARATIONS */

@@ -1,0 +1,68 @@
+/* @group 1. LESS VARS AND DECLARATIONS
+---------------------------------------------- */
+/*page grid columns*/
+/*space (gutter) between columns. Use percentages, this is a FLUID grid, right?*/
+/*page size*/
+/*how much page wrapper is apart from browser edges */
+.border-box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.rounded {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.clear {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.trans {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.bg-cover {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.no-trans {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  -ms-transition: none;
+  transition: none;
+}
+.no-indent {
+  margin: 0;
+  padding: 0;
+}
+.no-indent li {
+  list-style: none;
+}
+.border-top {
+  border-top: 1px solid #eee;
+  border-top: 1px solid rgba(0, 0, 0, 0.4);
+}
+.border-right {
+  border-right: 1px solid #eee;
+  border-right: 1px solid rgba(0, 0, 0, 0.4);
+}
+.border-bottom {
+  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+.border-left {
+  border-left: 1px solid #eee;
+  border-left: 1px solid rgba(0, 0, 0, 0.4);
+}
+/* @end LESS VARS AND DECLARATIONS */
