@@ -497,7 +497,7 @@ a.more:after {
 /* @group 3B. HOME
 --------------------------------------------- */
 #main-content {
-  padding: 0 4.6%;
+  padding: 0 2.3%;
   text-align: center;
 }
 #blocks {
@@ -648,7 +648,7 @@ a.more:after {
 /* @group 3C. FOOTER 
 --------------------------------------------- */
 #main-footer {
-  padding: 0 4.6% 4px;
+  padding: 0 2.3% 4px;
   margin-top: 40px;
   clear: both;
   /* hide carousel for users with js and show with js */
