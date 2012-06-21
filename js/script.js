@@ -69,7 +69,7 @@ if (Modernizr.touch) {
   	miscFunct: function(){
   		
   		var $sponsorCarousel = $('.sponsor-carousel');
-  		
+  				
   		// load the elastislideer for the restaurant logos
   		if ($().carouFredSel) {
     		$sponsorCarousel.show().find('ul').carouFredSel({
@@ -103,12 +103,28 @@ if (Modernizr.touch) {
   	},
   	
   	breakPoints: function() {
-
 	  	// define the breakpoints for images
 			var queries = [ 
 		    { 
 	        context: 'mobile', 
 	        callback: function() { 
+	        	
+	        	var $mainNav = $('#main-nav'),
+	        			$toggleMenu = $('.toggle-menu');
+	        			console.log('sdfsdf');
+	        	// show and hide main navigation
+			     	$mainNav.addClass('open');
+			     	setTimeout(function () { 
+			     		$mainNav.removeClass('open');
+			     		$toggleMenu.css('opacity', 1);
+			     	},2200);
+			     	     	
+			     	$toggleMenu.toggle(function() {
+			        $mainNav.addClass('open');
+			      }, function() {
+			        $mainNav.removeClass('open');
+			      });
+	        	
 	          $('img').each(function(index) {
               var imgMobile = $(this).attr('src');
               $(this).attr('src', imgMobile);
@@ -126,11 +142,11 @@ if (Modernizr.touch) {
 	        } 
 		    }, 
 		    { 
-	        context: '700px', 
-	        callback: function() { 
+	        context: '730px', 
+	        callback: function() {	        	
             $('img').each(function(index) {
-              var img700px = $(this).data('700px');
-              $(this).attr('src', img700px);
+              var img730px = $(this).data('730px');
+              $(this).attr('src', img730px);
             }); 
 	        } 
 		    } 
@@ -142,8 +158,8 @@ if (Modernizr.touch) {
 	  	// IE 8 and lower image handler
 		  if (oldIE) {
 		  	$('img').each(function(index) {
-	        var img700px = $(this).data('700px');
-	        $(this).attr('src', img700px);
+	        var img730px = $(this).data('730px');
+	        $(this).attr('src', img730px);
 	      });
 	    }
 	  	

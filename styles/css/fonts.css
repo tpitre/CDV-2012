@@ -60,6 +60,7 @@
 /* CSS to style glyphs */
 .glyph,
 .flex-direction-nav li a { cursor: default; font-size: 16px; line-height: 1; -webkit-font-smoothing: antialiased; font-smooth: always; }
+.glyph.general { font-family: "FoundationIconsGeneral" }
 .glyph.social { font-family: "FoundationIconsSocial"; }
 .glyph.general-enclosed,
 .flex-direction-nav li a { font-family: "FoundationIconsGeneralEnclosed"; }

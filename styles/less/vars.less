@@ -8,7 +8,7 @@
 @grid: 12;
 
 /* gutter space */
-@gut: 2.3%;
+@gut: 3%;
 
 /* page size */
 @max-width: 1224px;
@@ -23,6 +23,7 @@
 @font: "proxima-nova", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-secondary: "Parisian", cursive;
 @font-tertiary: "futura-pt", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-quaternary: "adelle", Georgia, "Times New Roman", Times, serif;
 
 @fontpx: 14;
 @linepx: 18;
@@ -47,6 +48,7 @@
 @main-transition: all .3s ease-in-out;
 @img-bg-color: #fff;
 @alt-border-color: #fff;
+@alert: #921d1d;
 
 /* @end COLORS */
 
@@ -58,13 +60,18 @@
 	-moz-box-shadow: @arguments;
 	box-shadow: @arguments;
 }
-
 .rotate (@deg: 4deg) {
 	-webkit-transform: rotate(@deg);
 	-moz-transform: rotate(@deg);
 	-o-transform: rotate(@deg);
 	-ms-transform: rotate(@deg);
 	transform: rotate(@deg);
+}
+.opacity(@op:100) {
+	filter: alpha(opacity=@op);
+	-moz-opacity: @op/100;
+	-khtml-opacity: @op/100;
+	opacity: @op/100;
 }
 
 /* @end FUNCTIONS */
@@ -152,6 +159,9 @@
 	background-color: @img-bg-color;
 	.border;
 	.border-box;
+	&:hover {
+		background: @main-hover-color;
+	}
 }
 
 /* @end CLASSES */
