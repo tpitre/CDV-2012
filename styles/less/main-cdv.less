@@ -109,6 +109,7 @@ p {
 }
 strong { font-weight: bold; }
 em { font-style: italic; }
+li { list-style: circle; }
 input {
   font-size: .9em;
   border: none;
@@ -461,12 +462,11 @@ a.more:after {
     .intro {
       font-size: 110%;
       padding: 0 6%;
-      .border-bottom-dotted;
+      margin-bottom: 40px;
       p:first-child:first-letter { 
         font-family: @font-quaternary;   
         font-size: 285%;
         font-weight: 600;        
-        color: @alert; 
         float: left;         
         line-height: 40px; 
         padding: 4px 3px 0 0         
@@ -480,14 +480,27 @@ a.more:after {
     h2 {
       font-size: 180%;
       margin-bottom: 26px;
-      .border-bottom;
+      padding: 6px 8px 4px;
+      background-color: @main-bg-color;
+      color: @alt-header-color;
+      .border-double;
     }
     h3 {
       font-size: 140%;
       text-align: left;
-      margin: 45px 0 26px;
+      margin: 50px 0 36px;
+      font-weight: 500;
       span {
         padding-left: 0;
+      }
+    }
+    h4 {
+      margin-bottom: 26px;
+    }
+    ul {
+      margin-bottom: 20px;
+      li {
+        margin-bottom: 40px;
       }
     }
   }

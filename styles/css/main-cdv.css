@@ -345,6 +345,9 @@ strong {
 em {
   font-style: italic;
 }
+li {
+  list-style: circle;
+}
 input {
   font-size: .9em;
   border: none;
@@ -762,14 +765,12 @@ a.more:after {
 .not-home #main-content .intro {
   font-size: 110%;
   padding: 0 6%;
-  border-bottom: 1px dotted #eee;
-  border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
+  margin-bottom: 40px;
 }
 .not-home #main-content .intro p:first-child:first-letter {
   font-family: "adelle", Georgia, "Times New Roman", Times, serif;
   font-size: 285%;
   font-weight: 600;
-  color: #921d1d;
   float: left;
   line-height: 40px;
   padding: 4px 3px 0 0;
@@ -783,16 +784,28 @@ a.more:after {
 .not-home .panel h2 {
   font-size: 180%;
   margin-bottom: 26px;
-  border-bottom: 1px solid #eee;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  padding: 6px 8px 4px;
+  background-color: #000000;
+  color: #ffffff;
+  border: 4px double #999999;
 }
 .not-home .panel h3 {
   font-size: 140%;
   text-align: left;
-  margin: 45px 0 26px;
+  margin: 50px 0 36px;
+  font-weight: 500;
 }
 .not-home .panel h3 span {
   padding-left: 0;
+}
+.not-home .panel h4 {
+  margin-bottom: 26px;
+}
+.not-home .panel ul {
+  margin-bottom: 20px;
+}
+.not-home .panel ul li {
+  margin-bottom: 40px;
 }
 /* @end 3B. MOSTLY SUBPAGES */
 /* @group 3C. FOOTER 
