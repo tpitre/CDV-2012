@@ -599,28 +599,33 @@ a.more:after {
 		body:after { 
 		  content: '580px' 
 		}
-		.block.block-krewe,
-		.block.block-auction,
-		.block.footer-signup,
-		.block.footer-social {
-			float: left;
-			clear: none;
-			.col(6);
-			margin: 0 0 40px;
-			h3 {
-				font-size: 110%;
+		#blocks {
+			.block {
+				border-bottom: none;
+				&.block-news {
+					margin-top: 10px;
+				}
 			}
-		}
-		.block.footer-signup,
-		.block.footer-social {
-			height: auto;
-		}
-		.block.block-auction,
-		.block.footer-social {
-			float: right;
-		}
-		.block.block-photos {
-			text-align: center;
+			.block.block-krewe,
+			.block.block-auction,
+			.block.footer-signup,
+			.block.footer-social {
+				float: left;
+				clear: none;
+				.col(6);
+				margin: 0 0 40px;
+				h3 {
+					font-size: 110%;
+				}
+			}
+			.block.footer-signup,
+			.block.footer-social {
+				height: auto;
+			}
+			.block.block-auction,
+			.block.footer-social {
+				float: right;
+			}
 		}
 	}/*/mediaquery*/
 	
@@ -737,7 +742,6 @@ a.more:after {
 			padding: 0 @gut;
 			.block {
 				padding-bottom: 16px;
-				border-bottom: none;
 				h3 {
 					font-size: 190%;
 				}

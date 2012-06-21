@@ -995,10 +995,16 @@ html[xmlns] .slides {
   body:after {
     content: '580px';
   }
-  .block.block-krewe,
-  .block.block-auction,
-  .block.footer-signup,
-  .block.footer-social {
+  #blocks .block {
+    border-bottom: none;
+  }
+  #blocks .block.block-news {
+    margin-top: 10px;
+  }
+  #blocks .block.block-krewe,
+  #blocks .block.block-auction,
+  #blocks .block.footer-signup,
+  #blocks .block.footer-social {
     float: left;
     clear: none;
     width: 48.85%;
@@ -1014,22 +1020,19 @@ html[xmlns] .slides {
     padding-left: 0;
     margin: 0 0 40px;
   }
-  .block.block-krewe h3,
-  .block.block-auction h3,
-  .block.footer-signup h3,
-  .block.footer-social h3 {
+  #blocks .block.block-krewe h3,
+  #blocks .block.block-auction h3,
+  #blocks .block.footer-signup h3,
+  #blocks .block.footer-social h3 {
     font-size: 110%;
   }
-  .block.footer-signup,
-  .block.footer-social {
+  #blocks .block.footer-signup,
+  #blocks .block.footer-social {
     height: auto;
   }
-  .block.block-auction,
-  .block.footer-social {
+  #blocks .block.block-auction,
+  #blocks .block.footer-social {
     float: right;
-  }
-  .block.block-photos {
-    text-align: center;
   }
 }
 /*/mediaquery*/
@@ -1145,7 +1148,6 @@ html[xmlns] .slides {
   }
   #blocks .block {
     padding-bottom: 16px;
-    border-bottom: none;
   }
   #blocks .block h3 {
     font-size: 190%;
