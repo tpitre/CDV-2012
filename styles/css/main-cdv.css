@@ -537,10 +537,17 @@ a.more:after {
 .block ol.slats li a {
   text-decoration: none;
 }
+.block ol.slats li a .push-it {
+  margin-left: 100px;
+}
+.block ol.slats li a span.meta {
+  display: block;
+  font-size: 80%;
+  color: #999999;
+}
 .block ol.slats li a h4 {
   font-size: 120%;
-  margin-bottom: 8px;
-  padding-top: 2px;
+  margin: 5px 0 8px;
 }
 .block ol.slats li a img {
   float: left;
@@ -558,12 +565,7 @@ a.more:after {
   background: #eeeeee;
 }
 .block ol.slats li a p {
-  margin: 0 0 0 100px;
-}
-.block ol.slats li a p span.meta {
-  display: block;
-  font-size: 80%;
-  color: #999999;
+  margin: 0;
 }
 .block.block-auction img,
 .block.block-krewe img {
@@ -634,6 +636,7 @@ a.more:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  max-width: 230px;
 }
 .block.block-photos p {
   clear: both;
@@ -1178,7 +1181,7 @@ html[xmlns] .slides {
     display: block;
     margin-bottom: 16px;
   }
-  #blocks .block-news ol.slats li p {
+  #blocks .block-news ol.slats li .push-it {
     margin: 0;
   }
   #main-footer {
@@ -1290,7 +1293,11 @@ html[xmlns] .slides {
     padding-bottom: 16px;
   }
   #main-content {
-    padding-top: 55px;
+    padding-top: 53px;
+  }
+  #blocks .block-news ol.slats li img {
+    width: auto;
+    float: left;
   }
 }
 /*/mediaquery*/
