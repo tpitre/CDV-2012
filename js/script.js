@@ -103,7 +103,7 @@ if (Modernizr.touch) {
   	},
   	
   	breakPoints: function() {
-	  	// define the breakpoints for images
+	  	// define the breakpoints
 			var queries = [ 
 		    { 
 	        context: 'mobile', 
@@ -112,6 +112,7 @@ if (Modernizr.touch) {
 	        	var $mainNav = $('#main-nav'),
 	        			$toggleMenu = $('.toggle-menu');
 	        			console.log('sdfsdf');
+	        			
 	        	// show and hide main navigation
 			     	$mainNav.addClass('open');
 			     	setTimeout(function () { 
