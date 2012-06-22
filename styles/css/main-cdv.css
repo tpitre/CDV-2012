@@ -15,7 +15,7 @@
    5. CRAPTASTIC IE STYLES
    6. MEDIA QUERIES
      6A. MIN-WIDTH: 580px
-     6B. MIN-WIDTH: 730px
+     6B. MIN-WIDTH: 780px
      
    =========================================== */
 /* @group 1. CSS IMPORTS
@@ -344,9 +344,6 @@ strong {
 }
 em {
   font-style: italic;
-}
-li {
-  list-style: circle;
 }
 input {
   font-size: .9em;
@@ -806,6 +803,7 @@ a.more:after {
 }
 .not-home .panel ul li {
   margin-bottom: 40px;
+  list-style-type: circle;
 }
 /* @end 3B. MOSTLY SUBPAGES */
 /* @group 3C. FOOTER 
@@ -961,8 +959,10 @@ a.more:after {
 .flex-container a:active,
 .flexslider a:active,
 .flex-container a:focus,
-.flexslider a:focus {
+.flexslider a:focus,
+.flexslider a {
   outline: none;
+  text-decoration: none;
 }
 .slides,
 .flex-control-nav,
@@ -1081,6 +1081,9 @@ html[xmlns] .slides {
 /* Direction Nav */
 .flex-direction-nav {
   height: 0;
+}
+.flex-direction-nav li {
+  list-style: none;
 }
 .flex-direction-nav li a {
   line-height: .4;
@@ -1288,11 +1291,11 @@ html[xmlns] .slides {
 }
 /*/mediaquery*/
 /* @end 6A. MIN-WIDTH: 580px */
-/* @group 6B. MIN-WIDTH: 730px
+/* @group 6B. MIN-WIDTH: 780px
 	--------------------------------------------- */
-@media all and (min-width: 730px) {
+@media all and (min-width: 780px) {
   body:after {
-    content: '730px';
+    content: '780px';
   }
   #main-container {
     margin-top: 20px;
@@ -1621,7 +1624,7 @@ html[xmlns] .slides {
   }
 }
 /*/mediaquery*/
-/* @end 6B. MIN-WIDTH: 730px */
+/* @end 6B. MIN-WIDTH: 780px */
 /* @group 6C. MIN-WIDTH: 830px
 	--------------------------------------------- */
 @media all and (min-width: 830px) {

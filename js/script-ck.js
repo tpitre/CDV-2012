@@ -59,44 +59,47 @@ Modernizr.touch && (isTouch = !0, logoCarouselSwipeAmt = null);
             e(".block:nth-child(even)").addClass("even");
         },
         breakPoints: function() {
-            var n = [ {
+            var n = function() {
+                var t = e("#main-nav"), n = e(".toggle-menu");
+                console.log("sdfsdf");
+                t.addClass("open");
+                setTimeout(function() {
+                    t.removeClass("open");
+                    n.css("opacity", 1);
+                }, 2200);
+                n.toggle(function() {
+                    t.addClass("open");
+                }, function() {
+                    t.removeClass("open");
+                });
+            }, r = [ {
                 context: "mobile",
                 callback: function() {
-                    var t = e("#main-nav"), n = e(".toggle-menu");
-                    console.log("sdfsdf");
-                    t.addClass("open");
-                    setTimeout(function() {
-                        t.removeClass("open");
-                        n.css("opacity", 1);
-                    }, 2200);
-                    n.toggle(function() {
-                        t.addClass("open");
-                    }, function() {
-                        t.removeClass("open");
-                    });
+                    n();
                     e("img").each(function(t) {
                         var n = e(this).attr("src");
                         e(this).attr("src", n);
                     });
                 }
             }, {
-                context: "450px",
+                context: "580px",
                 callback: function() {
+                    n();
                     e("img").each(function(t) {
-                        var n = e(this).data("450px");
+                        var n = e(this).data("580px");
                         e(this).attr("src", n);
                     });
                 }
             }, {
-                context: "730px",
+                context: "780px",
                 callback: function() {
                     e("img").each(function(t) {
-                        var n = e(this).data("730px");
+                        var n = e(this).data("780px");
                         e(this).attr("src", n);
                     });
                 }
             } ];
-            MQ.init(n);
+            MQ.init(r);
             t && e("img").each(function(t) {
                 var n = e(this).data("730px");
                 e(this).attr("src", n);

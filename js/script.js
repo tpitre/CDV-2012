@@ -103,51 +103,54 @@ if (Modernizr.touch) {
   	},
   	
   	breakPoints: function() {
+  		
+  		// show and hide main navigation
+  		var setMainNav = function() {
+	  		var $mainNav = $('#main-nav'),
+      			$toggleMenu = $('.toggle-menu');
+      			console.log('sdfsdf');      			
+      	
+	     	$mainNav.addClass('open');
+	     	setTimeout(function () { 
+	     		$mainNav.removeClass('open');
+	     		$toggleMenu.css('opacity', 1);
+	     	},2200);
+	     	     	
+	     	$toggleMenu.toggle(function() {
+	        $mainNav.addClass('open');
+	      }, function() {
+	        $mainNav.removeClass('open');
+	      });         
+  		}
+  	
 	  	// define the breakpoints
 			var queries = [ 
 		    { 
 	        context: 'mobile', 
-	        callback: function() { 
-	        	
-	        	var $mainNav = $('#main-nav'),
-	        			$toggleMenu = $('.toggle-menu');
-	        			console.log('sdfsdf');
-	        			
-	        	// show and hide main navigation
-			     	$mainNav.addClass('open');
-			     	setTimeout(function () { 
-			     		$mainNav.removeClass('open');
-			     		$toggleMenu.css('opacity', 1);
-			     	},2200);
-			     	     	
-			     	$toggleMenu.toggle(function() {
-			        $mainNav.addClass('open');
-			      }, function() {
-			        $mainNav.removeClass('open');
-			      });
-	        	
-	          $('img').each(function(index) {
-              var imgMobile = $(this).attr('src');
-              $(this).attr('src', imgMobile);
-            });
-  
+	        callback: function() { 	        	
+	        	setMainNav(); 
+	        	$('img').each(function(index) {
+		          var imgMobile = $(this).attr('src');
+		          $(this).attr('src', imgMobile);
+		        }); 
 	        } 
 		    }, 
 		    { 
-	        context: '450px', 
-	        callback: function() { 
+	        context: '580px', 
+	        callback: function() {
+	        	setMainNav();
             $('img').each(function(index) {
-              var img450px = $(this).data('450px');
-              $(this).attr('src', img450px);
+              var img580px = $(this).data('580px');
+              $(this).attr('src', img580px);
             }); 
 	        } 
 		    }, 
 		    { 
-	        context: '730px', 
-	        callback: function() {	        	
+	        context: '780px', 
+	        callback: function() {
             $('img').each(function(index) {
-              var img730px = $(this).data('730px');
-              $(this).attr('src', img730px);
+              var img780px = $(this).data('780px');
+              $(this).attr('src', img780px);
             }); 
 	        } 
 		    } 
