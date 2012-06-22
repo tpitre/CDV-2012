@@ -1398,6 +1398,23 @@ html[xmlns] .slides {
     padding-left: 0;
     float: left;
   }
+  .not-home #primary .panel {
+    font-size: 110%;
+  }
+  .not-home #primary .panel .columns {
+    -moz-column-count: 2;
+    -moz-column-gap: 3%;
+    -moz-column-rule-style: none;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 3%;
+    -webkit-column-rule-style: none;
+    column-count: 2;
+    column-gap: 3%;
+    colum-rule-style: none;
+  }
+  .not-home #primary .panel .columns p {
+    margin: 0 0 20px;
+  }
   .not-home #blocks.secondary {
     width: 31.333333333333332%;
     *width: 31.133333333333333%;

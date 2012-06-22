@@ -944,6 +944,23 @@ a.more:after {
 		  #primary {
 		    .col(8);
 		    float: left;
+		    .panel {
+		      font-size: 110%;
+		      .columns {
+		        -moz-column-count: 2;
+		        -moz-column-gap: @gut;
+		        -moz-column-rule-style: none;
+		        -webkit-column-count: 2;
+		        -webkit-column-gap: @gut;
+		        -webkit-column-rule-style: none;
+		        column-count: 2;
+		        column-gap: @gut;
+		        colum-rule-style: none;
+		        p {
+		          margin: 0 0 20px
+		        }
+		      }
+		    }
 		  }
 		  #blocks.secondary {
 		    .col(4);
