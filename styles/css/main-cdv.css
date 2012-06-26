@@ -414,6 +414,7 @@ a.more:after {
   background-color: #fff;
   max-width: 1224px;
   position: relative;
+  overflow: hidden;
   -webkit-box-shadow: 0 0 20px #000000;
   -moz-box-shadow: 0 0 20px #000000;
   box-shadow: 0 0 20px #000000;
@@ -421,61 +422,27 @@ a.more:after {
 #all-sites-nav {
   display: none;
 }
-#main-header {
-  text-align: center;
-}
-#main-header .toggle-menu {
-  display: none;
-}
 #main-header #main-nav ul {
   margin: 0;
   padding: 0;
-  margin: 0 auto;
-  padding-bottom: 2px;
-  overflow: hidden;
-  border-bottom: 1px solid #eee;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  display: none;
 }
 #main-header #main-nav ul li {
   list-style: none;
 }
-#main-header #main-nav ul li {
-  font-size: .8em;
-  text-transform: uppercase;
-  float: left;
-  width: 33%;
-  border-bottom: 1px solid #eee;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-}
-#main-header #main-nav ul li.menu-visit,
-#main-header #main-nav ul li.menu-krewe,
-#main-header #main-nav ul li.menu-gallery,
-#main-header #main-nav ul li.menu-news {
-  border-left: 1px solid #eee;
-  border-left: 1px solid rgba(0, 0, 0, 0.4);
-}
-#main-header #main-nav ul li.menu-auction {
-  clear: left;
-}
-#main-header #main-nav ul li.menu-krewe,
-#main-header #main-nav ul li.menu-gallery {
-  width: 33.7%;
-}
-#main-header #main-nav ul li a {
+#main-header #main-nav .menu-jump {
+  padding: 1px 4px 3px;
+  background-color: #000000;
+  border-bottom: 4px double #999999;
+  color: #ffffff;
   display: block;
-  padding: 4px 0 3px;
-  width: 100%;
-  text-decoration: none;
-  background-color: #eeeeee;
   text-decoration: none;
 }
-#main-header #main-nav ul li a:hover {
+#main-header #main-nav .menu-jump span {
   color: #ffffff;
-  background-color: #333333;
 }
-#main-header #main-nav ul li.active a {
-  color: #ffffff;
-  background-color: #333333;
+#main-header .gala-info {
+  text-align: center;
 }
 #main-header h1.logo-header {
   text-align: center;
@@ -511,42 +478,6 @@ a.more:after {
 }
 #main-header a.register-link:hover {
   border-color: #ffffff;
-}
-/* hide main menu for users with javascript */
-.js #main-header #main-nav {
-  margin-top: -60px;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-.js #main-header #main-nav.open {
-  margin-top: 0;
-}
-.js #main-header .toggle-menu {
-  display: inline-block;
-  float: right;
-  text-align: center;
-  margin: 5px;
-  height: 28px;
-  width: 28px;
-  line-height: 1.2;
-  background-color: #eeeeee;
-  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  filter: alpha(opacity=0);
-  -moz-opacity: 0;
-  -khtml-opacity: 0;
-  opacity: 0;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-.js #main-header .toggle-menu:hover {
-  color: #921d1d;
 }
 /* @end 3A. HEADER */
 /* @group 3B. HOME
@@ -946,6 +877,15 @@ a.more:after {
   color: #ffffff;
   background-color: #333333;
 }
+#main-footer .foot-nav ul li.nav-top a {
+  background-color: transparent;
+  border: none;
+  text-align: right;
+}
+#main-footer .foot-nav ul li.nav-top a:hover {
+  color: #000000;
+  text-decoration: underline;
+}
 #main-footer .site-meta {
   font-size: 70%;
 }
@@ -1304,6 +1244,7 @@ html[xmlns] .slides {
   #main-header #main-nav ul {
     margin: 0;
     padding: 0;
+    display: block;
     margin: 10px 3% 0 0;
     padding: 0;
     float: right;
@@ -1316,28 +1257,22 @@ html[xmlns] .slides {
   #main-header #main-nav ul li {
     display: inline-block;
     border: none;
+    float: left;
+    text-transform: uppercase;
     font-size: 70%;
   }
-  #main-header #main-nav ul li.menu-gala,
-  #main-header #main-nav ul li.menu-visit,
-  #main-header #main-nav ul li.menu-krewe,
-  #main-header #main-nav ul li.menu-gallery,
-  #main-header #main-nav ul li.menu-news,
-  #main-header #main-nav ul li.menu-auction {
-    width: auto;
-    border: none;
-    clear: none;
-  }
   #main-header #main-nav ul li a {
-    background-color: transparent;
-    width: auto;
+    display: block;
     padding: 4px 5px;
     margin: 0 1px;
     border: 4px double #999999;
+    text-decoration: none;
     border-color: #ffffff;
   }
   #main-header #main-nav ul li a:hover {
     border: 4px double #999999;
+    color: #ffffff;
+    background-color: #333333;
   }
   #main-header #main-nav ul li.active a {
     background-color: #000;
@@ -1375,7 +1310,7 @@ html[xmlns] .slides {
   .js #main-header #main-nav {
     margin-top: 0;
   }
-  .js #main-header .toggle-menu {
+  .js #main-header #main-nav .menu-jump {
     display: none;
   }
   #main-content {
@@ -1611,6 +1546,9 @@ html[xmlns] .slides {
     text-decoration: none;
     color: #000000;
     background-color: #eeeeee;
+  }
+  #main-footer .foot-nav ul li.nav-top {
+    display: none;
   }
   .site-meta {
     font-size: 75%;

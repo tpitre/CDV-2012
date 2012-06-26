@@ -105,30 +105,32 @@ if (Modernizr.touch) {
   	breakPoints: function() {
   		
   		// show and hide main navigation
+  		/*
   		var setMainNav = function() {
 	  		var $mainNav = $('#main-nav'),
-      			$toggleMenu = $('.toggle-menu');
-      			console.log('sdfsdf');      			
+      			$toggleMenu = $('.toggle-menu'),
+      			$body = $('body');
       	
-	     	$mainNav.addClass('open');
+	     	$body.addClass('menu-open');
 	     	setTimeout(function () { 
-	     		$mainNav.removeClass('open');
+	     		$body.removeClass('menu-open');
 	     		$toggleMenu.css('opacity', 1);
 	     	},2200);
 	     	     	
 	     	$toggleMenu.toggle(function() {
-	        $mainNav.addClass('open');
+	        $body.addClass('menu-open');
 	      }, function() {
-	        $mainNav.removeClass('open');
+	        $body.removeClass('menu-open');
 	      });         
   		}
+  		*/
   	
 	  	// define the breakpoints
 			var queries = [ 
 		    { 
 	        context: 'mobile', 
 	        callback: function() { 	        	
-	        	setMainNav(); 
+	        	//setMainNav(); 
 	        	$('img').each(function(index) {
 		          var imgMobile = $(this).attr('src');
 		          $(this).attr('src', imgMobile);
@@ -138,7 +140,7 @@ if (Modernizr.touch) {
 		    { 
 	        context: '580px', 
 	        callback: function() {
-	        	setMainNav();
+	        	//setMainNav();
             $('img').each(function(index) {
               var img580px = $(this).data('580px');
               $(this).attr('src', img580px);

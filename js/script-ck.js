@@ -59,23 +59,9 @@ Modernizr.touch && (isTouch = !0, logoCarouselSwipeAmt = null);
             e(".block:nth-child(even)").addClass("even");
         },
         breakPoints: function() {
-            var n = function() {
-                var t = e("#main-nav"), n = e(".toggle-menu");
-                console.log("sdfsdf");
-                t.addClass("open");
-                setTimeout(function() {
-                    t.removeClass("open");
-                    n.css("opacity", 1);
-                }, 2200);
-                n.toggle(function() {
-                    t.addClass("open");
-                }, function() {
-                    t.removeClass("open");
-                });
-            }, r = [ {
+            var n = [ {
                 context: "mobile",
                 callback: function() {
-                    n();
                     e("img").each(function(t) {
                         var n = e(this).attr("src");
                         e(this).attr("src", n);
@@ -84,7 +70,6 @@ Modernizr.touch && (isTouch = !0, logoCarouselSwipeAmt = null);
             }, {
                 context: "580px",
                 callback: function() {
-                    n();
                     e("img").each(function(t) {
                         var n = e(this).data("580px");
                         e(this).attr("src", n);
@@ -99,7 +84,7 @@ Modernizr.touch && (isTouch = !0, logoCarouselSwipeAmt = null);
                     });
                 }
             } ];
-            MQ.init(r);
+            MQ.init(n);
             t && e("img").each(function(t) {
                 var n = e(this).data("730px");
                 e(this).attr("src", n);
