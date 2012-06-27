@@ -318,6 +318,7 @@ h4 {
 }
 h4 {
   font-size: 1.2em;
+  font-weight: 600;
   line-height: 1.0714285714285716em;
 }
 h2,
@@ -1509,9 +1510,7 @@ html[xmlns] .slides {
     border: none;
   }
   #blocks .block-news ol.slats li img {
-    width: 100%;
-    display: block;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
   }
   #blocks .block-news ol.slats li .push-it {
     margin: 0;
