@@ -293,7 +293,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-weight: bold;
+  font-weight: 300;
   color: #000000;
 }
 h1 {
@@ -324,7 +324,6 @@ h2,
 h3 {
   font-family: "Parisian", cursive;
   letter-spacing: 2px;
-  font-weight: 300;
   text-transform: uppercase;
 }
 h3 {
@@ -431,15 +430,17 @@ a.more:after {
   list-style: none;
 }
 #main-header #main-nav .menu-jump {
-  padding: 1px 4px 3px;
+  padding: 6px 10px;
   background-color: #000000;
   border-bottom: 4px double #999999;
   color: #ffffff;
+  text-transform: uppercase;
   display: block;
   text-decoration: none;
 }
 #main-header #main-nav .menu-jump span {
   color: #ffffff;
+  margin-right: 4px;
 }
 #main-header .gala-info {
   text-align: center;
@@ -479,12 +480,67 @@ a.more:after {
 #main-header a.register-link:hover {
   border-color: #ffffff;
 }
+.menu-open #main-header #main-nav ul {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+.menu-open #main-header #main-nav ul li {
+  list-style: none;
+}
+/* header nav and footer nav are pretty much the same style */
+.menu-open #main-nav ul li a,
+#main-footer .foot-nav ul li a {
+  display: block;
+  padding: 8px 12px;
+  margin-bottom: 1px;
+  background-color: #eeeeee;
+  border-left: 4px solid #000000;
+  text-decoration: none;
+}
+.menu-open #main-nav ul li a:hover,
+#main-footer .foot-nav ul li a:hover {
+  color: #ffffff;
+  background-color: #333333;
+}
+.menu-open #main-nav ul li:last-child a,
+#main-footer .foot-nav ul li:last-child a {
+  margin-bottom: 0;
+}
+.menu-open #main-nav ul li.nav-top a,
+#main-footer .foot-nav ul li.nav-top a {
+  background-color: transparent;
+  border: none;
+  text-align: right;
+}
+.menu-open #main-nav ul li.nav-top a:hover,
+#main-footer .foot-nav ul li.nav-top a:hover {
+  color: #000000;
+  text-decoration: underline;
+}
+.menu-open #main-nav {
+  border-bottom: 4px double #999999;
+}
 /* @end 3A. HEADER */
 /* @group 3B. HOME
 --------------------------------------------- */
 #main-content {
   padding: 0 3%;
   text-align: center;
+}
+#main-content .flexslider ul.slides {
+  border: 4px double #999999;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#main-content .flexslider ul.slides li {
+  height: 200px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center center;
 }
 #blocks {
   margin-top: 20px;
@@ -865,27 +921,6 @@ a.more:after {
   margin: 30px 0;
   clear: both;
 }
-#main-footer .foot-nav ul li a {
-  display: block;
-  padding: 4px 6px;
-  margin-bottom: 1px;
-  background-color: #eeeeee;
-  border-left: 4px solid #000000;
-  text-decoration: none;
-}
-#main-footer .foot-nav ul li a:hover {
-  color: #ffffff;
-  background-color: #333333;
-}
-#main-footer .foot-nav ul li.nav-top a {
-  background-color: transparent;
-  border: none;
-  text-align: right;
-}
-#main-footer .foot-nav ul li.nav-top a:hover {
-  color: #000000;
-  text-decoration: underline;
-}
 #main-footer .site-meta {
   font-size: 70%;
 }
@@ -1117,6 +1152,9 @@ html[xmlns] .slides {
   #main-header a.register-link {
     font-size: 200%;
   }
+  #main-content .flexslider ul.slides li {
+    height: 350px;
+  }
   .not-home #main-content {
     padding: 10px 3%;
   }
@@ -1315,6 +1353,13 @@ html[xmlns] .slides {
   }
   #main-content {
     padding: 50px 0 0;
+  }
+  #main-content .flexslider ul.slides {
+    border-right: none;
+    border-left: none;
+  }
+  #main-content .flexslider ul.slides li {
+    height: 350px;
   }
   .not-home #main-content {
     padding: 20px 3%;
@@ -1581,6 +1626,9 @@ html[xmlns] .slides {
   }
   #main-content {
     padding-top: 53px;
+  }
+  #main-content .flexslider ul.slides li {
+    height: 450px;
   }
   #blocks .block-photos ul li {
     width: 21%;

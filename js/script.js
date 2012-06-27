@@ -105,32 +105,26 @@ if (Modernizr.touch) {
   	breakPoints: function() {
   		
   		// show and hide main navigation
-  		/*
   		var setMainNav = function() {
 	  		var $mainNav = $('#main-nav'),
-      			$toggleMenu = $('.toggle-menu'),
+      			$toggleMenu = $('.menu-jump'),
       			$body = $('body');
-      	
-	     	$body.addClass('menu-open');
-	     	setTimeout(function () { 
-	     		$body.removeClass('menu-open');
-	     		$toggleMenu.css('opacity', 1);
-	     	},2200);
 	     	     	
-	     	$toggleMenu.toggle(function() {
+	     	$toggleMenu.toggle(function(e) {
 	        $body.addClass('menu-open');
-	      }, function() {
+	        e.preventDefault();
+	      }, function(e) {
 	        $body.removeClass('menu-open');
+	        e.preventDefault();
 	      });         
   		}
-  		*/
   	
 	  	// define the breakpoints
 			var queries = [ 
 		    { 
 	        context: 'mobile', 
 	        callback: function() { 	        	
-	        	//setMainNav(); 
+	        	setMainNav(); 
 	        	$('img').each(function(index) {
 		          var imgMobile = $(this).attr('src');
 		          $(this).attr('src', imgMobile);
@@ -140,7 +134,7 @@ if (Modernizr.touch) {
 		    { 
 	        context: '580px', 
 	        callback: function() {
-	        	//setMainNav();
+	        	setMainNav();
             $('img').each(function(index) {
               var img580px = $(this).data('580px');
               $(this).attr('src', img580px);
@@ -150,6 +144,7 @@ if (Modernizr.touch) {
 		    { 
 	        context: '780px', 
 	        callback: function() {
+	        	$('body').removeClass('menu-open');
             $('img').each(function(index) {
               var img780px = $(this).data('780px');
               $(this).attr('src', img780px);

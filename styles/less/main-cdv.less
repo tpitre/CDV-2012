@@ -58,7 +58,7 @@ a:active {
   outline: 0;
 }
 h1,h2,h3,h4 {	
-	font-weight: bold; 
+	font-weight: 300; 
 	color: @main-header-color;
 }
 h1 {
@@ -90,8 +90,7 @@ h4 {
 }
 h2, h3 {
   font-family: @font-secondary;
-  letter-spacing: 2px;
-  font-weight: 300;
+  letter-spacing: 2px;  
   text-transform: uppercase;
 }
 h3 {
@@ -191,14 +190,16 @@ a.more:after {
       display: none;
     }
     .menu-jump {
-      padding: 1px 4px 3px;
+      padding: 6px 10px;
       background-color: @main-bg-color;
       .border-double-bottom;     
       color: @alt-link-color;
+      text-transform: uppercase;
       display: block;
       text-decoration: none;
       span {
         color: @alt-link-color;
+        margin-right: 4px;
       }
     }
   }
@@ -241,6 +242,51 @@ a.more:after {
   	}
   }
 }
+.menu-open #main-header {  
+  #main-nav {    
+    ul {
+    	.no-indent;
+      display: block;
+    }
+  }
+}
+/* header nav and footer nav are pretty much the same style */
+.menu-open #main-nav,
+#main-footer .foot-nav {	
+	ul {
+		li {			  
+			a {
+				display: block;
+				padding: 8px 12px;
+				margin-bottom: 1px;
+				background-color: @main-nav-bg-color;
+				border-left: 4px solid @main-bg-color;
+				text-decoration: none;
+				&:hover {
+					color: @main-nav-hover-link-color; 
+					background-color: @main-nav-hover-bg-color;
+				}				
+			}
+			&:last-child a {
+					margin-bottom: 0;
+				}
+			&.nav-top {
+			  a {
+			    background-color: transparent;
+			    border: none;
+			    text-align: right;
+			    &:hover {
+			      color: @main-link-color;
+			      text-decoration: underline;
+			    }
+			  }
+			}
+		}
+	}
+}
+.menu-open #main-nav {
+	.border-double-bottom;
+}
 
 /* @end 3A. HEADER */
 
@@ -250,6 +296,17 @@ a.more:after {
 #main-content {
   padding: 0 @gut;
   text-align: center;
+  .flexslider {
+	  ul.slides {
+	  	.border-double;
+	  	.border-box;
+		  li {
+			  height: 200px;
+			  .bg-cover;
+			  background-position: center center;  
+		  }
+	  }
+  }
 }
 #blocks {
 	margin-top: 20px;
@@ -566,33 +623,6 @@ a.more:after {
 	.foot-nav {
 		margin: 30px 0;
 		clear: both;
-		ul {
-			li {			  
-				a {
-					display: block;
-					padding: 4px 6px;
-					margin-bottom: 1px;
-					background-color: @main-nav-bg-color;
-					border-left: 4px solid @main-bg-color;
-					text-decoration: none;
-					&:hover {
-						color: @main-nav-hover-link-color; 
-						background-color: @main-nav-hover-bg-color;
-					}
-				}
-				&.nav-top {
-				  a {
-				    background-color: transparent;
-				    border: none;
-				    text-align: right;
-				    &:hover {
-				      color: @main-link-color;
-				      text-decoration: underline;
-				    }
-				  }
-				}
-			}
-		}
 	}
 	.site-meta {
 		font-size: 70%;
@@ -709,6 +739,15 @@ a.more:after {
 		    font-size: 200%;
 		  }
 		}
+		#main-content {
+			.flexslider {
+			  ul.slides {
+				  li {
+					  height: 350px;
+				  }
+			  }
+		  }
+		}
 		.not-home {
 		  #main-content {
 		    padding: 10px @gut;
@@ -807,7 +846,7 @@ a.more:after {
 		}
 		#main-container {   
 		  margin-top: 20px;
-		  .border-double;
+		  .border-double;		  
 		}
 		#main-header {
 			#main-nav {			  
@@ -884,7 +923,16 @@ a.more:after {
 			}			
 		}				
 		#main-content {
-			padding: 50px 0 0;		
+			padding: 50px 0 0;
+			.flexslider {
+			  ul.slides {
+			  	border-right: none;
+			  	border-left: none;
+				  li {
+					  height: 350px;
+				  }
+			  }
+		  }		
 		}
 		.not-home {
 		  #main-content {
@@ -1094,7 +1142,14 @@ a.more:after {
 			}
 		}
 		#main-content {
-			padding-top: 53px;		
+			padding-top: 53px;
+			.flexslider {
+			  ul.slides {
+				  li {
+					  height: 450px;
+				  }
+			  }
+		  }	
 		}
 		#blocks {
   	  .block-photos {
@@ -1129,6 +1184,7 @@ a.more:after {
 	}/*/mediaquery*/
 	
 	/* @end 6C. MIN-WIDTH: 830px */
+
 
 /* @end 6. MEDIA QUERIES */
 
