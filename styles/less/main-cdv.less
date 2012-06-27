@@ -35,7 +35,7 @@
 body {
   font-family: @font;
   color: @main-font-color;
-  background: #fff url('../../img/bg-pattern-alt.gif') repeat center top;
+  background: #000 url('../../img/bg-pattern.gif') repeat center top;
   padding: 0;
   margin: 0 6px;  
 }
@@ -863,11 +863,11 @@ a.more:after {
 						border: none;
 						float: left;
 						text-transform: uppercase;
-						font-size: 70%;					
+						font-size: 83%;
 						a {
 						  display: block;
 							padding: 4px 5px;
-							margin: 0 1px;
+							margin: 0 2px;
 							.border-double;
 							text-decoration: none;
 							border-color: @alt-border-color;
@@ -887,8 +887,7 @@ a.more:after {
 			}
 			.gala-info {
 				background-color: @img-bg-color;
-				width: 25%;
-				max-width: 260px;
+				.col(3);
 				position: absolute;
 				z-index: 2;
 				margin: -3px 3px 0 @gut;
@@ -896,16 +895,16 @@ a.more:after {
 				.border-double;
 				border-top: none;
 				h1.logo-header {
-					text-align: left;
+					text-align: center;
 					margin: 0 15px 10px;
 					padding: 0;
 				}
 				h1.city-header {
-					font-size: 130%;
+					font-size: 120%;
 				}
 				h1.date-header {
 					margin: 10px;
-					font-size: 100%;
+					font-size: 120%;
 				}
 				.register-link {
 					font-size: 120%;
@@ -1118,18 +1117,17 @@ a.more:after {
 	
 	/* @end 6B. MIN-WIDTH: 780px */
 	
-	/* @group 6C. MIN-WIDTH: 830px
+	/* @group 6C. MIN-WIDTH: 890px
 	--------------------------------------------- */
 	
-	@media all and (min-width: 830px) {
+	@media all and (min-width: 890px) {
 		body:after { 
-			content: '830px' 
+			content: '890px' 
 		}
 		#main-header {
 			#main-nav {
 				ul {
-					li {
-						font-size: 83%;
+					li {						
 						a {
 							padding: 4px 7px;
 						}
@@ -1139,6 +1137,12 @@ a.more:after {
 			.gala-info {
 				padding-top: 20px;
 				padding-bottom: 16px;
+				h1.city-header {
+					font-size: 160%;
+				}
+				h1.date-header {
+					font-size: 140%;
+				}
 			}
 		}
 		#main-content {
@@ -1183,7 +1187,7 @@ a.more:after {
 		}
 	}/*/mediaquery*/
 	
-	/* @end 6C. MIN-WIDTH: 830px */
+	/* @end 6C. MIN-WIDTH: 890px */
 
 
 /* @end 6. MEDIA QUERIES */
