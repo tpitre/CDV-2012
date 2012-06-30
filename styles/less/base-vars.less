@@ -1,0 +1,103 @@
+/* ===========================================
+
+   These are the main variables to be used
+   thorughout this base theme and subthemes
+        
+   =========================================== */
+   
+
+/* @group 1. LESS VARS AND DECLARATIONS
+============================================= */
+
+/* @group STRUCTURE
+--------------------------------------------- */
+
+/* page grid columns */
+@grid: 12;
+
+/* gutter space */
+@gut: 3%;
+
+/* page size */
+@max-width: 1224px;
+@min-width: 320px;
+@page-padding: @gut*2;
+
+/* @end STRUCTURE */
+
+/* @group FUNCTIONS
+--------------------------------------------- */
+
+.box-shadow (@h: 0, @v: 0, @blur: 3px, @color: rgba(0,0,0,.4)) {
+	-webkit-box-shadow: @arguments;
+	-moz-box-shadow: @arguments;
+	box-shadow: @arguments;
+}
+.rotate (@deg: 4deg) {
+	-webkit-transform: rotate(@deg);
+	-moz-transform: rotate(@deg);
+	-o-transform: rotate(@deg);
+	-ms-transform: rotate(@deg);
+	transform: rotate(@deg);
+}
+.opacity(@op:100) {
+	filter: alpha(opacity=@op);
+	-moz-opacity: @op/100;
+	-khtml-opacity: @op/100;
+	opacity: @op/100;
+}
+
+/* @end FUNCTIONS */
+
+/* @group CLASSES
+--------------------------------------------- */
+
+.border-box {
+  -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.rounded {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.clear {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.trans {
+  -webkit-transition: @main-transition;
+  -moz-transition: @main-transition;
+  -o-transition: @main-transition;
+  -ms-transition: @main-transition;
+  transition: @main-transition;
+}
+.bg-cover {  
+  -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.no-trans {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  -ms-transition: none;
+  transition: none;
+}
+.no-indent {  
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
+  }
+}
+
+/* @end CLASSES */
+
+/* @end LESS VARS AND DECLARATIONS */

@@ -1,0 +1,556 @@
+/* ===========================================
+   Main styles for Carnivale du Vin 2012
+      
+   Author: Terrance Pitre
+   Version: 0.1
+   URL: http://southleft.com
+   
+   LEGEND:
+   1. IMPORTS
+   2. BASE
+   3. MAIN
+   4. 3RD PARTY CSS
+   	4A. FLEXSLIDER 
+   5. CRAPTASTIC IE STYLES
+   6. MEDIA QUERIES
+     6A. MIN-WIDTH: 580px
+     6B. MIN-WIDTH: 780px
+     
+   =========================================== */
+
+
+/* @group 1. CSS IMPORTS
+============================================= */
+
+@import 'centage_screen.less';
+@import 'base-vars.less';
+@import 'base.less';
+@import 'cdv-vars.less';
+
+/* @end 1. IMPORTS */
+
+
+/* @group 2. BASE
+============================================= */
+
+body {
+  font-family: @font;
+  color: @main-font-color;
+  background: #000 url('../../img/bg-pattern.gif') repeat center top;
+}
+a,
+a:link,
+a:visited {
+  color: @main-link-color;
+}
+a:hover,
+a:focus,
+a:active {
+  background-color: @main-hover-color;
+}
+h1,h2,h3,h4 {	
+	font-weight: 600; 
+	color: @main-header-color;
+}
+h1 {
+	font-family: @font-secondary;
+}
+h2, h3 {
+  font-family: @font-secondary;
+  letter-spacing: 2px;  
+  text-transform: uppercase;
+}
+h3 {
+	font-family: @font-tertiary;
+	background: transparent url('../../img/border-double.png') repeat-x center center;
+	text-align: center;
+	/* .text-shadow; */
+}
+h3 span {
+	background-color: #fff;
+	padding: 0 8px;
+}
+h4 {
+	font-weight: 600;
+}
+input {
+  color: @main-font-color;
+}
+button,
+a.btn,
+.form-submit {
+  text-transform: uppercase;
+  color: @alt-link-color;
+  background-color: @main-bg-color;
+}
+button.alt {
+	background: none;
+	background-color: #FFFFDA;
+	filter: none;
+	color: @main-font-color;
+}
+a.more {
+	background-color: @main-bg-color;
+	text-transform: uppercase;
+	color: @alt-link-color;
+	.border-double;
+}
+a.more:hover {
+  border-color: @alt-link-color;
+}
+a.more:after {
+	content: "›";
+	margin-left: 6px;
+}
+/* @end BASE */
+
+/* @group 3. MAIN
+============================================= */
+
+/* @group 3A. HEADER
+--------------------------------------------- */
+
+#main-container {   
+  background-color: #fff;
+  max-width: @max-width;
+  .box-shadow(0, 0, 20px, #000);
+}
+#main-header {  
+  #main-nav {    
+    .menu-jump {
+      background-color: @main-bg-color;
+      .border-double-bottom;     
+      color: @alt-link-color;
+      text-transform: uppercase;
+      span {
+        color: @alt-link-color;
+      }
+    }
+  }
+  .gala-info {
+    text-align: center;
+  }
+  h1.city-header {
+  	margin: 1px 0 0;
+  	font-size: 150%;
+  }
+  h1.date-header {
+  	margin: 10px 0;
+  	font-size: 140%;
+  }
+  a.register-link {
+  	font: 300 150% @font-tertiary;
+  	color: @alt-link-color;
+  	background-color: @main-nav-hover-bg-color;
+  	.border-double;
+  	&:hover {
+  	  border-color: @alt-link-color;
+  	}
+  }
+}
+/* header nav and footer nav are pretty much the same style */
+.menu-open #main-nav,
+#main-footer .foot-nav {	
+	ul {
+		li {			  
+			a {
+				background-color: @main-nav-bg-color;
+				border-left: 4px solid @main-bg-color;
+				&:hover {
+					color: @main-nav-hover-link-color; 
+					background-color: @main-nav-hover-bg-color;
+				}				
+			}
+			&.nav-top {
+			  a {
+			    background-color: transparent;
+			    border: none;
+			    text-align: right;
+			    &:hover {
+			      color: @main-link-color;
+			      text-decoration: underline;
+			    }
+			  }
+			}
+		}
+	}
+}
+.menu-open #main-nav {
+	.border-double-bottom;
+}
+
+/* @end 3A. HEADER */
+
+/* @group 3B. HOME
+--------------------------------------------- */
+
+#main-content {
+  .flexslider {
+	  ul.slides {
+	  	.border-double;
+	  	.border-box;
+		  li {
+			  height: 200px;
+			  .bg-cover;
+			  background-position: center center;  
+		  }
+	  }
+  }
+}
+.block {
+	.border-bottom-dotted;
+	h3 {
+		text-align: center;
+	}
+	ol.slats {
+		li {
+			.border-bottom-dotted;
+			a {
+				span.meta {
+					color: @alt-font-color;
+				}
+				h4 {
+					font-size: 120%;
+					margin: 5px 0 8px;
+				}
+				img {
+					.img-style;
+				}
+				&:hover img {
+					background: @main-hover-color;
+				}
+			}
+		}
+	}
+	&.block-auction,
+	&.block-krewe {
+		img {
+			.img-style;
+		}
+	}
+	&.block-photos {	 
+		ul {		
+			li {				
+				img {
+					.img-style;
+					max-width: 230px;
+				}
+			}
+		}
+	}
+}
+
+/* @end 3B. HOME */
+
+/* @group 3C. MOSTLY SUBPAGES
+--------------------------------------------- */
+
+.page-title {
+  margin: 20px 0;
+  position: relative;  
+  img {
+    width: 100%;
+    display: none;
+  }
+  h1 {    
+  	text-align: center;
+  	color: @alt-header-color;
+  	.border-double;
+  	border-right: 0;
+  	border-left: 0;
+  	.border-box;
+  	border-color: @alt-border-color;
+  	background-color: rgba(0,0,0,.6);
+  }
+}
+/* For sub-page specific */
+.not-home {
+  #main-content {
+    .intro {
+      p:first-child:first-letter { 
+        font-family: @font-quaternary;   
+        font-size: 285%;
+        font-weight: 600;        
+        float: left;         
+        line-height: 40px; 
+        padding: 4px 3px 0 0         
+      }
+    }
+  }
+  .panel {
+    .border-bottom-dotted;
+    h2 {
+      background-color: @main-bg-color;
+      color: @alt-header-color;
+      .border-double;
+    }
+    h3 {
+      font-weight: 500;
+      span {
+        padding-left: 0;
+      }
+    }
+    ul {
+      li {
+        list-style-type: circle;
+      }
+    }
+  }
+}
+
+/* @end 3B. MOSTLY SUBPAGES */
+
+/* @group 3C. FOOTER 
+--------------------------------------------- */
+
+#main-footer {
+	#sponsors {
+		position: relative;
+	  .sponsor-carousel {
+	    background-color: @main-bg-color;
+	    .border-box;
+	    .border-double;	    
+		}		
+	}	
+	.footer-social {
+		ul {
+			.glyph {
+				color: @main-bg-color;
+			}
+		}
+	}
+}
+
+/* @end 3C. FOOTER */
+
+/* @end 3. MAIN */
+
+/* @group 4. 3RD PARTY CSS
+============================================= */
+
+  /* @group 4A. FLEXSLIDER 
+  --------------------------------------------- */
+  
+  /* @end 4A. FLEXSLIDER */
+
+/* @end 4. 3RD PARTY CSS */
+
+
+/* @group 5. CRAPTASTIC IE STYLES
+============================================= */
+
+.lt-ie9 {
+
+}
+
+/* @end 5. CRAPTASTIC IE STYLES */
+
+
+/* @group 6. MEDIA QUERIES
+============================================= */
+  
+	/* @group 6A. MIN-WIDTH: 580px
+	--------------------------------------------- */
+	
+	@media all and (min-width: 580px) {
+		body:after { 
+		  content: '580px' 
+		}
+		#main-header {
+		  h1.city-header {
+		  	font-size: 210%;
+		  }
+		  h1.date-header {
+		  	margin: 12px 0 20px;
+		  	font-size: 180%;
+		  }
+		  a.register-link {
+		    font-size: 200%;
+		  }
+		}
+		#main-content {
+			.flexslider {
+			  ul.slides {
+				  li {
+					  height: 350px;
+				  }
+			  }
+		  }
+		}
+		.not-home {
+		  #main-content {
+		    padding: 10px @gut;
+		  }
+		}		
+		.page-title {
+		  .border-double;
+		  border-right: none;
+		  border-left: none;  
+		  img {
+		    max-height: 300px;
+		    display: block;
+		  }
+		  h1 {
+		  	.border-double;
+		  	border-right: 0;
+		  	border-color: @alt-border-color;
+		  }
+		}
+	}/*/mediaquery*/
+	
+	/* @end 6A. MIN-WIDTH: 580px */
+	
+	/* @group 6B. MIN-WIDTH: 780px
+	--------------------------------------------- */
+	
+	@media all and (min-width: 780px) {
+		body:after { 
+			content: '780px' 
+		}
+		#main-container {   
+		  .border-double;		    
+		}
+		#main-header {
+			#main-nav {			  
+				ul {
+					li {
+						a {
+							.border-double;
+							text-decoration: none;
+							border-color: @alt-border-color;
+							&:hover {
+								.border-double;
+								color: @main-nav-hover-link-color; 
+								background-color: @main-nav-hover-bg-color;
+							}
+						}
+						&.active a {	
+						  background-color: #000;
+						  color: @alt-link-color;					  
+							.border-double;							
+						}
+					}
+				}  
+			}
+			.gala-info {
+				background-color: @img-bg-color;
+				.col(3);
+				position: absolute;
+				z-index: 2;
+				margin: -3px 3px 0 @gut;
+				padding: 12px 16px 10px;
+				.border-double;
+				border-top: none;
+				h1.logo-header {
+					text-align: center;
+					margin: 0 15px 10px;
+					padding: 0;
+				}
+				h1.city-header {
+					font-size: 120%;
+				}
+				h1.date-header {
+					margin: 10px;
+					font-size: 120%;
+				}
+				.register-link {
+					font-size: 120%;
+					font-weight: 600;
+					padding: 5px 12px;
+				}
+			}
+		}			
+		#main-content {
+			padding: 50px 0 0;				
+		}
+		.not-home {
+		  #blocks.secondary {
+		    .block {
+		      .border-bottom-dotted;		     
+		      &.block-news {
+		        li {
+		        	.border-bottom-dotted;		        	
+		        }
+		      }
+		    }
+		  }
+		}
+		.flexslider {
+			margin: 0 0 40px;
+			.slides {
+				.border-double;
+				border-right: none;
+				border-left: none;		
+				img {
+					padding: 0;
+					border: 0;
+					max-height: 450px;
+				}
+			}
+			.flex-caption {
+				.border-double;
+				border-right: 0;
+				border-color: @alt-border-color;
+				background-color: rgba(0,0,0,.6);
+			}
+		}		
+		#main-footer {			
+			.foot-nav {
+				.border-top;
+				.border-bottom;
+				ul {
+					li {
+						a {
+							border: none;
+							background-color: transparent;
+							text-decoration: underline;
+							&:hover {
+								text-decoration: none;
+								color: @main-link-color;
+								background-color: @main-hover-color;
+							}
+						}
+					}
+				}
+			}
+		}
+	}/*/mediaquery*/
+	
+	/* @end 6B. MIN-WIDTH: 780px */
+	
+	/* @group 6C. MIN-WIDTH: 890px
+	--------------------------------------------- */
+	
+	@media all and (min-width: 890px) {
+		body:after { 
+			content: '890px' 
+		}
+		#main-header {
+			.gala-info {
+				padding-top: 20px;
+				padding-bottom: 16px;
+				h1.city-header {
+					font-size: 160%;
+				}
+				h1.date-header {
+					font-size: 140%;
+				}
+			}
+		}
+		#main-content {
+			.flexslider {
+			  ul.slides {
+				  li {
+					  height: 450px;
+				  }
+			  }
+		  }	
+		}
+	}/*/mediaquery*/
+	
+	/* @end 6C. MIN-WIDTH: 890px */
+
+
+/* @end 6. MEDIA QUERIES */
+
+

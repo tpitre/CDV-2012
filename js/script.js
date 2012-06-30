@@ -222,8 +222,8 @@ $(window).load(function() {
   // load flexslider
 	$mainSlider.flexslider({
 	  animation: 'fade',
-	  prevText: 'v',
-	  nextText: 'u',
+	  prevText: 'a',
+	  nextText: 'b',
 	});
   
 });

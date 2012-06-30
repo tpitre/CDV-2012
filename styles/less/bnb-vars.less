@@ -1,0 +1,114 @@
+/* @group 1. LESS VARS AND DECLARATIONS
+============================================= */
+
+/* @group STRUCTURE
+--------------------------------------------- */
+
+/* page grid columns */
+@grid: 12;
+
+/* gutter space */
+@gut: 3%;
+
+/* page size */
+@max-width: 1224px;
+@min-width: 320px;
+@page-padding: @gut*2;
+
+/* @end STRUCTURE */
+
+/* @group FONTS
+--------------------------------------------- */
+
+//@font: "proxima-nova", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font: "adelle", Georgia, "Times New Roman", Times, serif;
+@font-secondary: "rosewood-std-fill", Georgia, "Times New Roman", Times, serif;
+@font-tertiary: "rosewood-std-fill", Georgia, "Times New Roman", Times, serif;
+@font-quaternary: "proxima-nova", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+@fontpx: 14;
+@linepx: 18;
+
+/* @end FONTS */
+
+/* @group COLORS
+--------------------------------------------- */
+
+@main-font-color: #4b4b4b;
+@alt-font-color: #999;
+@main-link-color: #804A1F;
+@alt-link-color: #000;
+@main-header-color: #000;
+@alt-header-color: #fff;
+@main-hover-color: spin(@main-link-color, 30%);
+@main-border-color: #ccc;
+@main-bg-color: #6B3218;
+@main-nav-bg-color: #eee;
+@main-nav-hover-link-color: #fff;
+@main-nav-hover-bg-color: #333;
+@main-transition: all .3s ease-in-out;
+@img-bg-color: #fff;
+@alt-border-color: #fff;
+@alert: #921d1d;
+
+/* @end COLORS */
+
+
+
+/* @group CLASSES
+--------------------------------------------- */
+
+.border {
+	border: 1px dotted #eee;
+	border: 1px dotted rgba(0,0,0,.4);
+}
+.border-top {
+  border-top: 1px dotted #eee;
+  border-top: 1px dotted rgba(0,0,0,.4);
+}
+.border-right {
+  border-right: 1px dotted #eee;
+  border-right: 1px dotted rgba(0,0,0,.4);
+}
+.border-bottom {
+  border-bottom: 1px dotted #eee;
+  border-bottom: 1px dotted rgba(0,0,0,.4);
+}
+.border-left {
+  border-left: 1px dotted #eee;
+  border-left: 1px dotted rgba(0,0,0,.4);
+}
+.border-double {
+	border: 4px double rgba(0,0,0,.5);
+	background-color: #fff;
+}
+.border-double-bottom {
+	border-bottom: 4px double @main-border-color;
+}
+.border-bottom-dotted {
+  border-bottom: 1px dotted #eee;
+  border-bottom: 1px dotted rgba(0,0,0,.2);
+}
+.text-shadow {
+	text-shadow: 1px 1px 0px #eee, 2px 2px 0px rgba(0,0,0,.3);
+}
+.bg-texture {
+	background: #FFFFEE url(../../img/bg-texture.png) repeat top center;
+}
+.img-style {
+	padding: 8px;
+	background: transparent url(../../img/mesh-border.png) repeat top center;
+	.border;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.2);
+	-moz-box-shadow: inset 0 0 6px rgba(0,0,0,.2);
+	box-shadow: inset 0 0 6px rgba(0,0,0,.2);
+	.border-box;
+	.trans;
+	&:hover {
+		background-color: lighten(@main-link-color, 60%);
+	}
+}
+
+/* @end CLASSES */
+
+/* @end LESS VARS AND DECLARATIONS */
